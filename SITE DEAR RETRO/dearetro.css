@@ -19,6 +19,7 @@ body{
 .header {
     border-bottom: 1px solid #ffffff;
     justify-content: space-between;
+    backdrop-filter: blur(15px);
 
 }
 
@@ -167,7 +168,109 @@ h1{
     font-size: 15px;
 }
 
-.black-sky {
-    background-color: black;
-    color: white;
-  }
+#albuns{
+    height: 100vh;
+    position: relative;
+    background-image: url(./img/backgroundAlbum2.png);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    background-size:cover;
+}
+
+.h1_sessao3 {
+    margin-top: 12%;
+    margin-left: 35.5%;
+    font-size: 37px;
+}
+
+
+#footer{
+    height: 45vh;
+    background-color: #000000;
+    bottom: 0;
+    position: relative;
+}
+
+.containerFooter{
+    width: 85%;
+    margin: auto;
+}
+
+.containerFooter .div_menu_contato{
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerFooter .div_menu_contato div{
+    width: 50%;
+}
+
+.menuFooter .listMenuFooter{
+    list-style: none;
+}
+
+.menuFooter .listMenuFooter a{
+    text-decoration: none;
+    color: #ffffff;
+    margin: -40px;
+}
+
+.menuFooter .listMenuFooter a:hover{
+    color: #C3ACD0;
+    border-bottom: solid 2px #C3ACD0;
+}
+
+h4{
+    color: #C3ACD0;
+    margin-bottom: 10px;
+}
+
+.icon_contato{
+    margin-right: 10px;
+}
+
+.containerFooter .div_final_footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerFooter .div_final_footer div{
+    width: fit-content;
+}
+
+.div_final_footer .logo_footer{
+    width: 200px;
+    margin-bottom: 5%;
+}
+
+.div_final_footer .divF{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #C3ACD0;
+    font-weight: bold;
+    font-family: 'Montserrat';
+}
+
+.div_final_footer .div_redes_sociais{
+    display: flex;
+    align-items: center;
+}
+
+.div_final_footer .div_redes_sociais .icon_rede_social{
+    margin-right: 7px;
+    font-family: 'Rozha One';
+}
+
+.div_final_footer .div_redes_sociais .icon_rede_social:hover{
+    width: 40px;
+}
+
+.div_redes_sociais {
+    margin-left: 0%;
+}
+
+h4 {
+    font-family: 'Rozha One';
+}
