@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+html {
+    scroll-padding-top: 12.5vh;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+    background-color: #080707;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.header {
+    border-bottom: 1px solid #ffffff;
+    justify-content: space-between;
+
+}
+
+.header a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: #ffffff;
+}
+
+#inicio{
+    height: 100vh;
+    position: relative;
+    background-image: url(./img/kk.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    background-size:cover;
+}
+
+.header{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:  rgba(255, 255, 255, 0.2);
+    position: fixed;
+    transition: 0.5s ease-in-out;
+}
+
+.header.ativa {
+    background-color: #C3ACD0;
+    box-shadow: 2px 3px #C3ACD0;
+}
+
+.header .container{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .container .logoEmpresa img{
+    width: 150px;
+}
+
+.navbar{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.navbar.ativa {
+    color:#000000;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0;
+}
+
+.navbar a:hover{
+    color: #ffffff;
+    border-bottom: solid 2px #fffdfd;
+}
+
+.agora a{
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.login{
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+    padding-left: 37px;
+    padding-right: 37px;
+    border-radius: 20px;
+    border: none;
+    font-family: 'Montserrat';
+    cursor: pointer;
+}
+
+.login:hover {
+    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24), 0 17px 50px 0 rgba(202, 100, 194, 0.19);
+    border-bottom: none;
+}
+
+.divTxtInicio{
+    width: 85%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: 'Montserrat';
+}
+
+.txtInicio{
+    text-align: left;
+    font-size: 20px;
+    margin-top: -100px;
+}
+
+.txtInicio h3{
+    color: #ffffff;
+}
+
+h1{
+    color: #ffffff;
+    font-size: 40px;
+    font-family: "Rozha One";
+}
+
+.container_principal {
+    margin: auto;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.h1_sessao2 {
+    color: #C3ACD0;
+    font-size: 35px;
+    font-family: "Rozha One";
+    justify-content: start;
+    align-items: center;
+    display: flex;
+}
+
+.div_container {
+    justify-content: start;
+    align-items: center;
+    font-size: 15px;
+}
+
+.black-sky {
+    background-color: black;
+    color: white;
+  }
