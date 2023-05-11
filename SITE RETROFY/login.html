@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | HopTech</title>
+    <link rel="shortcut icon" href="/img/logo discofone sozinho .svg" type="image/x-icon"> <!-- Ícone da página -->
+    <link rel="stylesheet" href="/css/login.css"> <!-- Exportando o CSS do login -->
+</head>
+<body>
+    <div class="container_login">
+        <div class="logo_retrofy">
+            <a href="retrofy.html"><img src="img/logo.png" alt="Logo da Retrofy" width="450px"></a>
+            <div class="footerLogin"><footer>© 2023 Retrofy</footer></div>
+        </div>
+        <div class="area_login">
+            <div class="divLogin">
+                <h1>Login</h1>
+                <form class="formLogin" id="formLogin" action="#" method="post">
+                    <label>Usuário*</label>
+                    <input class="iptLogin" type="text" id="ipt_usuario" required>
+                    <label>Senha*</label>
+                    <input class="iptLogin" type="password" id="ipt_senha" required>
+                    <div class="linksLogin">
+                        <a class="a" href="./siteHopTech.html#contato">Ainda não possui cadastro? Acesse aqui.</a>
+                        <a class="a" href="#">Esqueci minha senha</a>
+                    </div>
+                    <input class="botao_entrar_login" type="submit" value="Entrar" onclick="fazerLogin(); return false">
+                </form>
+            </div>
+            </div>
+        </div>
+</body>
+</html>
+<!-- Exportando a API de alertas "SweetAlert2": -->
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4/bootstrap-4.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<!-- Exportando a interação do site com JS: -->
+<script src="/js/login.js"></script>

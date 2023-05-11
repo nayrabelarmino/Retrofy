@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+.container_login{
+    display: flex;
+}
+
+.logo_retrofy{
+    width: 40%;
+    height: 100vh;
+    background-color: #E4CBF1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoProjetoAreaLogin{
+    width: 90%;
+}
+
+.logo_retrofy .footerLogin{
+    width: 90%;
+    color: #3B2F57;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+footer{
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 30px;
+}
+
+.area_login{
+    width: 60%;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3B2F57;
+}
+
+.divLogoEmpresaAreaLogin{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logoEmpresaAreaLogin{
+    width: 150px;
+}
+
+.area_login .divLogoEmpresaAreaLogin .logoEmpresaAreaLogin:hover{
+    cursor: pointer;
+}
+
+.divLogin{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: -100px;
+}
+
+.formLogin{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formLogin .iptLogin{
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 25px;
+    background-color: #E4CBF1 ;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+.formLogin .iptLogin:hover{
+    border-color: #3B2F57;
+}
+
+.formLogin .botao_entrar_login{
+    width: 50%;
+    height: 35px;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #3B2F57;
+    margin-top: 20px;
+    align-self: center;
+    font-family: 'Montserrat';
+}
+
+.formLogin .botao_entrar_login:hover{
+    border-color: #40513B;
+    background-color: #E4CBF1;
+}
+
+.linksLogin{
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linksLogin .a{
+    color: #3B2F57;
+    font-size: 15px;
+}
+
+.linksLogin .a:hover{
+    color: #E4CBF1;
+}
+

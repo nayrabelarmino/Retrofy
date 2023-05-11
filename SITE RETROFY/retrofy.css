@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
 
 html {
     scroll-padding-top: 12.5vh;
@@ -11,7 +13,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Montserrat';
-    background-color: #080707;
+    background-color: #E5CEF1;
     color: #ffffff;
     overflow-x: hidden;
 }
@@ -40,7 +42,7 @@ body{
 #inicio{
     height: 100vh;
     position: relative;
-    background-image: url(./img/kk.jpg);
+    background-image: url(./img/backgroundInicial.png);
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -101,8 +103,8 @@ body{
 }
 
 .login{
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #E4CBF1;
+    color: #ffffff;
     padding: 5px;
     padding-left: 37px;
     padding-right: 37px;
@@ -127,36 +129,44 @@ body{
     font-family: 'Montserrat';
 }
 
+
+
 .txtInicio{
     text-align: left;
     font-size: 20px;
     margin-top: -100px;
 }
 
-.txtInicio h3{
-    color: #ffffff;
+.txtInicio p{
+    color: #3B2F57;
 }
 
 h1{
-    color: #ffffff;
-    font-size: 40px;
+    color: #3B2F57;
+    font-size: 45px;
     font-family: "Rozha One";
+}
+
+#historia_da_musica {
+    background: linear-gradient(0deg, #FFF7AD, #E5CEF1)
 }
 
 .container_principal {
     margin: auto;
+    margin-top: 8%;
     width: 85%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    color: #3B2F57;
 
 }
 
 .h1_sessao2 {
-    color: #C3ACD0;
+    color: #3B2F57;
     font-size: 35px;
-    font-family: "Rozha One";
+    font-family: "Montserrat";
     justify-content: start;
     align-items: center;
     display: flex;
@@ -171,29 +181,125 @@ h1{
 #albuns{
     height: 100vh;
     position: relative;
-    background-image: url(./img/backgroundAlbum2.png);
+    background-image: url(./img/album.svg);
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     background-size:cover;
+    z-index: -1;
+}
+
+.img_artistas {
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-left: 24%;
 }
 
 .h1_sessao3 {
-    margin-top: 12%;
-    margin-left: 35.5%;
-    font-size: 37px;
+    margin: auto;
+    margin-top: 9%;
+    margin-left: 38%;
+    font-size: 29px;
+    font-family: "Montserrat";
+}
+
+.slider {
+  --slide-width: 250px;
+  height: fit-content;
+  margin: 80px auto;
+
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(var(--slide-width) * 14);
+}
+
+.slider .slide {
+  height: fit-content;
+  width: var(--slide-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc((var(--slide-width) * -1) * 7));
+  }
+}
+
+.slide img {
+  width: 80%;
+  aspect-ratio: 1;
+}
+
+.slide span {
+  color: #e1e1e1;
+  font-family: 'Montserrat';
+  align-self: flex-start;
+}
+
+.slide > .nome-musica {
+  font-weight: bold;
+  color: #3B2F57;
+}
+
+.slide > .artista {
+  font-weight: thin;
+  color: #3B2F57;
+}
+
+#cadastro{
+    height: 100vh;
+    position: relative;
+    background-image: url(./img/sessao_cadastro.sv);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    background-size:cover;
+    z-index: -1;
 }
 
 
 #footer{
-    height: 45vh;
-    background-color: #000000;
+    background-color: #C3ACD0;
     bottom: 0;
     position: relative;
 }
 
 .containerFooter{
-    width: 85%;
+    width: 75%;
     margin: auto;
 }
 
@@ -217,12 +323,12 @@ h1{
 }
 
 .menuFooter .listMenuFooter a:hover{
-    color: #C3ACD0;
-    border-bottom: solid 2px #C3ACD0;
+    color: #000000;
+    border-bottom: solid 2px #000000;
 }
 
 h4{
-    color: #C3ACD0;
+    color: #000000;
     margin-bottom: 10px;
 }
 
@@ -241,7 +347,6 @@ h4{
 
 .div_final_footer .logo_footer{
     width: 200px;
-    margin-bottom: 5%;
 }
 
 .div_final_footer .divF{
