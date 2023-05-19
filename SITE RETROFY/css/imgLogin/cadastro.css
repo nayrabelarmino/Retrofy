@@ -44,13 +44,13 @@ body{
 
 }
 
-.ipt_login{
+.ipt_cadastro{
     width: 185%;
     height: 30px;
     border: none;
     border-radius: 25px;
     background-color: #ffffff;
-    font-size: 18px;
+    font-size: 12px;
     margin-bottom: 15px;
     margin-left: 30px;
     font-family: 'Montserrat';
@@ -75,21 +75,6 @@ body{
     margin-left: 230px;
 }
 
-button {
-    width: 20vh;
-    height: 35px;
-    font-size: 10px;
-    border: none;
-    border-radius: 25px;
-    text-transform: uppercase;
-    color: #ffffff;
-    font-weight: bold;
-    background-color: #3B2F57;
-    cursor: pointer;
-    font-family: "Montserrat";
-    margin-top: 10px;
-}
-
 .form_login .botao_entrar_login:hover{
     background-color: #9d74b4;
 }
@@ -110,7 +95,7 @@ button {
     color: #8f28ca;
 }
 
-.botao_cadastro {
+button {
     width: 25vh;
     height: 35px;
     font-size: 10px;
@@ -125,11 +110,11 @@ button {
     font-family: "Montserrat";
 }
 
-.botao_cadastro:hover{
+button:hover{
     background-color: #9d74b4;
 }
 
-.containerCadastro {
+.container_login {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -138,17 +123,17 @@ button {
     width: 50%;
 }
 
-.div_login {
+.div_cadastro {
     flex-direction: column;
     align-items: center;
     width: 50%; 
 }
 
 .titulo {
-    margin-bottom: 13%;
+    margin-bottom: 10%;
     font-size: 25px;
     font-weight: 900;
-    margin-top: 100px;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -159,4 +144,3 @@ label {
 .barra {
     border-left: 2px solid #3B2F57
 }
-
