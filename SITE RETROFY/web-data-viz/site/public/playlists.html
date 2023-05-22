@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/web-data-viz/site/public/css/playlists.css">
+    <link rel="shortcut icon" href="/web-data-viz/site/public/assets/imgHome/logo discofone sozinho .svg">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Retrofy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div>
+        <nav class="menu-lateral">
+            <div class="botao_expandir">
+                <i class="bi bi-music-note-list" id="botao-expandir"></i>
+            </div>
+            <ul>
+                <li class="item-menu ativo">
+                    <a href="">
+                        <span class="icon"><i class="bi bi-cassette"></i></span>
+                        <span class="txt-link">Playlists</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/quiz.html">
+                        <span class="icon"><i class="bi bi-journal-check"></i></span>
+                        <span class="txt-link">Quiz</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/biblioteca.html">
+                        <span class="icon"><i class="bi bi-heart"></i></span>
+                        <span class="txt-link">Biblioteca</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/contaConfig.html">
+                        <span class="icon"><i class="bi bi-person-circle"></i></span>
+                        <span class="txt-link">Conta</span>
+                    </a>    
+                </li>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/retrofy.html">
+                        <span class="icon-sair"><i class="bi bi-box-arrow-left"></i></span>
+                        <span class="txt-link-sair">Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="div-full">
+        <div class="div-filha">
+            <div class="container-inicial">
+                <h2 class="titulo-inicial">Bem vindo, Nayra!</h2>
+                <p>Entre de cabeça em uma experiência musical inesquecível!</p>
+            </div>
+            <div class="container-principal">
+                <div class="txt-div">
+                    <h3>Decida como quer a sua playlist!</h3>
+                    <p>Uma playlist com recomendações feita para você.</p>
+                </div>
+
+                <div class="container-playlist">
+                    <div class="container-genero">
+                        <span>Selecione um gênero:</span>
+                        <select name="generos" id="select-genero">
+                            <option style="color: darkgrey;" value="0">Selecione...</option>
+                            <option value="">Pop</option>
+                            <option value="">Rock</option>
+                            <option value="">Post Punk</option>
+                        </select>
+                    </div>
+                    <div class="barra"></div>
+                    <div class="container-decada">
+                        <span>Selecione uma década:</span>
+                        <select name="decadas" id="select-decada">
+                            <option style="color: darkgrey;" value="0">Selecione...</option>
+                            <option value="">1960</option>
+                            <option value="">1970</option>
+                            <option value="">1980</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="botao-playlist" onclick="gerarPlaylist()">Gerar Playlist!</button>
+            </div>
+        </div>             
+            <div class="filha2">
+            <h2 class="titulo-inicial">Playlists mais escolhidas</h2>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div> 
+    <div class="retrofy">
+        <iframe style="border-radius:25px" src="https://open.spotify.com/embed/playlist/3LQAId3dSC4h2PUgsvf887?utm_source=generator" 
+        width="45%" height="200px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>   
+</body>
+
+<script>
+    const labels = [
+        `Rock - 60's`,
+        `Rock - 70's`,
+        `Rock - 80's`,
+        `Post Punk - 80's`,
+        `Pop - 60's`,
+        `Pop - 70's`,
+        `Pop - 80's`
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Playlists mais escolhidas',
+            backgroundColor: '',
+            data: [5, 10, 10, 10, 3, 5, 12]
+        }]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {}
+    };
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config);
+</script>
+
+</html>
+<script src="/web-data-viz/site/public/js/playlists.js"></script>

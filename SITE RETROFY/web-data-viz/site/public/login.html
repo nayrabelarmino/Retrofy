@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | HopTech</title>
+    <link rel="shortcut icon" href="/web-data-viz/site/public/assets/imgLogin/logo discofone sozinho .svg" type="image/x-icon"> <!-- Ícone da página -->
+    <link rel="stylesheet" href="/web-data-viz/site/public/css/login.css"> <!-- Exportando o CSS do login -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <div class="div_background">
+        <div class="container_principal">
+            <div class="containerCadastro">
+                <a href="retrofy.html">
+                <img src="/web-data-viz/site/public/assets/imgLogin/logo_pequena.png" alt="Logo Retrofy" width="300px"></a>
+                <p>Não tem cadastro ainda?<br>
+                 Clique aqui para se cadastrar e conhecer <br> as melhores playlists feitas para você!</p>
+                 <button onclick="irParaCadastro()">Cadastre-se!</button>
+            </div>
+            <div class="barra"></div>
+            <div class="div_login">
+                <h2 class="titulo">Login</h2>
+                <form class="form_login" id="formLogin" action="#" method="post">
+                    <label>Email*</label>
+                    <input class="ipt_login" type="text" id="ipt_usuario" placeholder="" required>
+                    <label>Senha*</label>
+                    <input class="ipt_login" type="password" id="ipt_senha" required>
+                    <div class="links_login">
+                        <a class="a" href="#">Esqueci minha senha</a>
+                    </div>
+                    <input class="botao_entrar_login" type="submit" value="Entrar" onclick="fazerLogin(); return false">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- Exportando a API de alertas "SweetAlert2": -->
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4/bootstrap-4.css" rel="stylesheet">
+
+<!-- Exportando a interação do site com JS: -->
+<script src="/web-data-viz/site/public/js/login.js"></script>

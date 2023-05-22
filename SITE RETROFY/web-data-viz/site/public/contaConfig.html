@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/web-data-viz/site/public/css/contaConfig.css">
+    <link rel="shortcut icon" href="/web-data-viz/site/public/assets/imgHome/logo discofone sozinho .svg">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Retrofy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div>
+        <nav class="menu-lateral">
+            <div class="botao_expandir">
+                <i class="bi bi-music-note-list" id="botao-expandir"></i>
+            </div>
+            <ul>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/playlists.html">
+                        <span class="icon"><i class="bi bi-cassette"></i></span>
+                        <span class="txt-link">Playlists</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/quiz.html">
+                        <span class="icon"><i class="bi bi-journal-check"></i></span>
+                        <span class="txt-link">Quiz</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/biblioteca.html">
+                        <span class="icon"><i class="bi bi-heart"></i></span>
+                        <span class="txt-link">Biblioteca</span>
+                    </a>
+                </li>
+                <li class="item-menu ativo">
+                    <a href="/web-data-viz/site/public/contaConfig.html">
+                        <span class="icon"><i class="bi bi-person-circle"></i></span>
+                        <span class="txt-link">Conta</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/retrofy.html">
+                        <span class="icon-sair"><i class="bi bi-box-arrow-left"></i></span>
+                        <span class="txt-link-sair">Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- configuração do usuário -->
+
+    <div class="div-full">
+        <div class="div-filha-esquerda">
+            <div class="txt-inicio">
+                <h2>Configuração de conta</h2>
+                <p>Atualize seus dados e insira uma escolha um avatar.</p>
+            </div>
+            <div class="card user-card-full">
+                <div class="gradiente-container usuario-nome-foto">
+                    <img src="https://i.pinimg.com/564x/82/0c/09/820c097a415d81c3bf83f848f42f9a4a.jpg" class="img-radius"
+                        alt="User-Profile-Image" height="110px">
+                </div>
+                <div class="card-block">
+                    <h6 class="m-b-20 p-b-5 linha font-name">Perfil Do Usuário</h6>
+                    <div>
+                        <p class="informacao">Nome completo:</p>
+                        <h6 class="informacao-usuario">Nayra Belarmino</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="informacao">Email:</p>
+                        <h6 class="informacao-usuario">nayra@gmail.com</h6>
+                    </div>
+                </div>
+                <button class="botao-editar" onclick="editarPerfil()">Editar</button>
+            </div>
+        </div>
+        <div class="div-filha-direita">
+            <div class="txt-inicio">
+                <h2 class="nome-tabela">Histórico de tentativas</h2>
+            </div>
+        <div class="historico">
+            <table>
+                <thead>
+                    <tr class="titulo-tabela">
+                        <td>Quiz</td>
+                        <td>Acertos</td>
+                        <td>Erros</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pop</td>
+                        <td>4</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Rock</td>
+                        <td>10</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Post Punk</td>
+                        <td>8</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Pop</td>
+                        <td>4</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Rock</td>
+                        <td>10</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Post Punk</td>
+                        <td>8</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Pop</td>
+                        <td>4</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Rock</td>
+                        <td>10</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Post Punk</td>
+                        <td>8</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Pop</td>
+                        <td>4</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Rock</td>
+                        <td>10</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Post Punk</td>
+                        <td>8</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script src="/web-data-viz/site/public/js/contaConfig.js"></script>

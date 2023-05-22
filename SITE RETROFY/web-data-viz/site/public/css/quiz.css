@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+body {
+    height: 80vh;
+    background-color: #F6F3EA;
+    color: #3B2F57;
+    overflow: hidden scroll;
+}
+
+nav.menu-lateral {
+    width: 80px;
+    height: 100vh;
+    background-color: #bd90d6af;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #DCB9FF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .7s;
+    z-index: 2;
+}
+
+nav.menu-lateral.expandir {
+    width: 300px;
+    backdrop-filter: blur(8px);
+}
+
+.botao_expandir {
+    width: 100%;
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+
+.botao_expandir > i {
+    color: #ffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.ativo {
+    background-color: #DCB9FF;
+}
+
+ul li.item-menu:hover{
+    background-color: #DCB9FF;
+}
+
+ul li.item-menu{
+    transition: .2s;
+}
+
+ul li.item-menu a{
+    color: #ffff;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+.txt-link{
+    margin-left: 40px;
+}
+
+.txt-link-sair{
+    margin-left: 40px;
+    color: rgb(151, 16, 16);
+    text-decoration: underline;
+}
+
+.icon > i{
+    font-size: 25px;
+}
+
+.icon-sair > i {
+    font-size: 25px;
+    color: rgb(151, 16, 16);
+    margin-left: 8px;
+}
+
+.icon {
+    margin-left: 8px;
+}
+
+.inicio-txt {
+    color:#490072;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+    margin-left: 180px;
+    width: 840px;
+}
+
+h2 {
+    color: #5A008D;
+    margin-bottom: 30px;
+}
+h3 {
+    color: #5A008D;
+}
+
+.quiz {
+    background-color: #dcb9ffaf;
+    height: 260px;
+    border-radius: 30px; 
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 40px;
+    width: 250px;
+    gap: 2vh;
+}
+
+.div-principal {
+    display: flex;
+    margin-left: 140px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 110px;
+}
+
+.botao-quiz {
+    width: 20vh;
+    height: 35px;
+    font-size: 10px;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #3B2F57;
+    cursor: pointer;
+    font-family: "Montserrat";
+    align-self: center;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-quiz:hover {
+    background-color: #9571a8;
+}
+
+
+section {
+    display: flex;
+    width: 150px;
+    height: 150px;
+}
+
+section img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .9;
+    transition: .8s ease;
+    border-radius: 2px;
+}
+
+section img:hover {
+    cursor: pointer;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #9571a8;
+    text-decoration: none;
+    border-radius: 100%;
+}
+.btn::after {
+    content: "⮉";
+    font-size: 38px;
+    font-weight: bold;
+    color: aliceblue;
+    transition: 5ms;
+}
+.btn:hover::after {
+    margin-top:-8px;
+}
+
+#myChart {
+    margin-left: 180px;
+}
+
+table {
+    color: #5A008D;
+    border-collapse: collapse;
+    width: 20%;
+    margin-left: 180px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+th {
+    color: #5A008D;
+    background-color: #bd90d6af;
+    font-size: 15px;
+    padding: 15px;
+    border: .5px solid #5A008D;
+}
+
+td {
+    font-size: 15px;
+    padding: 15px;
+    border: 1px solid #5A008D;
+}
+
+.gold{
+    background-color: #eed4fc;
+    color: #b5bd4a;
+    font-weight: bold;
+}
+
+.ranking h2 {
+    margin-left: 180px;
+}

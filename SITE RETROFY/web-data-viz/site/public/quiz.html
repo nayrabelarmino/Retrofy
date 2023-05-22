@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/web-data-viz/site/public/css/quiz.css">
+    <link rel="shortcut icon" href="/web-data-viz/site/public/assets/imgHome/logo discofone sozinho .svg">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Hora do Quiz! - Retrofy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div>
+        <nav class="menu-lateral">
+            <div class="botao_expandir">
+                <i class="bi bi-music-note-list" id="botao-expandir"></i>
+            </div>
+            <ul>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/playlists.html">
+                        <span class="icon"><i class="bi bi-cassette"></i></span>
+                        <span class="txt-link">Playlists</span>
+                    </a>
+                </li>
+                <li class="item-menu ativo">
+                    <a href="/web-data-viz/site/public/quiz.html">
+                        <span class="icon"><i class="bi bi-journal-check"></i></span>
+                        <span class="txt-link">Quiz</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/biblioteca.html">
+                        <span class="icon"><i class="bi bi-heart"></i></span>
+                        <span class="txt-link">Biblioteca</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/contaConfig.html">
+                        <span class="icon"><i class="bi bi-person-circle"></i></span>
+                        <span class="txt-link">Conta</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="/web-data-viz/site/public/retrofy.html">
+                        <span class="icon-sair"><i class="bi bi-box-arrow-left"></i></span>
+                        <span class="txt-link-sair">Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <a href="#" class="btn"></a>
+    </div>
+    <div class="inicio-txt">
+        <h2>Vamos jogar?</h2>
+        <p>Bem-vindo ao Quiz Retrofy! <br>
+
+            Aqui você irá testar seus conhecimentos referente a música voltada para os gêneros: Pop, Rock e Post Punk. <br>    
+            Além disso, vale lembrar que todos os nossos quizzes são cronometrados. Ou seja, você terá um período de 
+            tempo para responder todas as perguntas do quiz. É importante estar preparado para responder rapidamente, 
+            mas sem deixar de lado a precisão nas respostas. <br>
+            Você pode escolher qual quiz fazer primeiro, ou até mesmo fazê-los várias vezes para tentar melhorar sua pontuação 
+            e tempo. <br>
+            Basta selecionar o quiz desejado e começar a responder as perguntas! Boa sorte e divirta-se!</p><br><br>
+    </div>
+    <div class="div-principal">
+        <div class="quiz">
+            <h3>Pop</h3>
+            <main>
+                <section>
+                    <img src="https://arquivos.consultoriadorock.com/content/2020/08/CR4.jpg" alt="" width="200px">
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/6/67/ShesSoUnusual1984.png" alt="" width="200px">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTdjNWIwOTAtMmFhMC00YzRhLTkzM2MtY2I3Yzc2ODc4MTdlXkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_.jpg" alt="" width="200px">
+                </section>
+            </main>
+            <button class="botao-quiz" onclick="quizPop()">Jogar!</button>
+        </div>
+        <div class="quiz">
+            <h3>Rock</h3>
+            <main>
+                <section>
+                    <img src="https://arquivos.consultoriadorock.com/content/2017/04/03-The-Number-of-the-Beast-600x600.jpg" alt="" width="200px">
+                    <img src="https://arquivos.consultoriadorock.com/content/2020/08/CR3-600x600.jpg" alt="" width="200px">
+                    <img src="https://arquivos.consultoriadorock.com/content/2017/10/09-heaven-and-Hell-600x600.jpg" alt="" width="200px">
+                </section>
+            </main>
+            <button class="botao-quiz" onclick="quizRock()">Jogar!</button>
+        </div>
+        <div class="quiz">
+            <h3>Post Punk</h3>
+            <main>
+                <section>
+                    <img src="https://www.udiscovermusic.com/wp-content/uploads/2019/04/The-Cure-Disintegration-cover-web-optimised-820.jpg" alt="" width="200px">
+                    <img src="https://byronsmuse.files.wordpress.com/2020/05/joy-division-closer-3.jpg" alt="" width="200px">
+                    <img src="https://i.discogs.com/oJ85N6HJOBPwHlzIUJpersJGDpAhO9zXYt__ulYOJSY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4MjEz/NS0xNjY4MTM5NDE5/LTk5NjguanBlZw.jpeg" alt="" width="200px">
+                </section>
+            </main>
+            <button class="botao-quiz" onclick="quizPostPunk()">Jogar!</button>
+        </div>  
+    </div>
+    <section id="container-graficos">
+        <div class="container-ranking">
+            <div class="ranking">
+                <h2>Quiz Pop - Ranking</h2>
+                <table>
+                    <tr>
+                        <th>Pódio</th>
+                        <th>User</th>
+                        <th>Pontuação</th>
+                    </tr>
+                    <tr>
+                        <td class="gold">1º</td>
+                        <td>João</td>
+                        <td class="gold">1000</td>
+                    </tr>
+                    <tr>
+                        <td class="silver">2º</td>
+                        <td>Maria</td>
+                        <td class="silver">900</td>
+                    </tr>
+                    <tr>
+                        <td class="bronze">3º</td>
+                        <td>Carlos</td>
+                        <td class="bronze">800</td>
+                    </tr>
+                    <tr>
+                        <td>4º</td>
+                        <td>Júlia</td>
+                        <td>700</td>
+                    </tr>
+                    <tr>
+                        <td>5º</td>
+                        <td>Pedro</td>
+                        <td>600</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="graficos">
+                <div class="grafico1">
+                    <h3 class="titulo-inicial"></h3>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="grafico2">
+                    <h3 class="titulo-inicial"></h3>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="grafico3">
+                    <h3 class="titulo-inicial"></h3>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="filha2">
+        <h2 class="titulo-inicial"></h2>
+        <canvas id="myChart"></canvas>
+    </div>
+</body>
+<script>
+    const labels = [
+        `Questão 1 - Pop`,
+        `Questão 2 - Pop`,
+        `Questão 3 - Pop`,
+        `Questão 4 - Pop`,
+        `Questão 5 - Pop`,
+        `Questão 6 - Pop`,
+        `Questão 7 - Pop`,
+        `Questão 8 - Pop`,
+        `Questão 9 - Pop`,
+        `Questão 10 - Pop`
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Quantidade de acertos por questão',
+            backgroundColor: '',
+            data: [5, 10, 10, 2, 5, 10, 10, 4, 8, 2]
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config);
+</script>
+
+</html>
+<script src="js/quiz.js"></script>
