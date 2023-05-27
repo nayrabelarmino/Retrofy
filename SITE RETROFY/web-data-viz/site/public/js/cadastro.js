@@ -4,11 +4,10 @@ function irParaLogin() {
 
 function fazerCadastro() {
     var nomeVar = ipt_nome.value;
-    var sobrenomeVar = ipt_sobrenome.value;
     var emailVar = ipt_email.value;
     var senhaVar = ipt_senha.value;
 
-    if (nomeVar == "" || emailVar == "" || senhaVar == "" || sobrenomeVar == "") {
+    if (nomeVar == "" || emailVar == "" || senhaVar == "") {
         //cardErro.style.display = "block"
         swal("Ops", "Preencha todos os campos.", "error")
 

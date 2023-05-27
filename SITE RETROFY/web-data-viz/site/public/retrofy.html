@@ -11,6 +11,8 @@
 </head>
 
 <body>
+  <div id="modais"></div>
+
   <section id="inicio">
     <div class="header" id="header">
       <div class="container">
@@ -30,7 +32,7 @@
     </div>
     <div class="divTxtInicio">
       <div class="txtInicio">
-        <h1 class="titulo_principal">It's not old, it's classic</h1>
+        <h1 class="titulo_principal" style="font-weight: 900;">It's not old, it's classic</h1>
         <p><b>Um pouco de história e as melhores <br>
             recomendações de músicas das décadas de <br>
             60, 70 e 80 você só encontra aqui!</b><br></p>
@@ -40,7 +42,7 @@
   <section id="historia_da_musica">
     <div class="container_principal">
       <div class="div_container">
-        <h1 class="h1_sessao2">História da música</h1>
+        <h1 class="h1_sessao2" style="font-weight: 900;">História da música</h1>
         <div class="div_cards1">
           <div class="cards">
             <h3>60's e Rock'n'Roll</h3>
@@ -118,16 +120,22 @@
             criatividade e diversidade.</p>
         </div><br>
       </div><br><br>
-        <h1 class="h1_sessao2">Conheça esses artistas:</h1>
+        <h1 class="h1_sessao2" style="font-weight: 900;">Conheça esses artistas:</h1>
         <div class="img_artistas">
-          <img class="imgs_cantores" src="https://s2.glbimg.com/O0E4iuR9n-YtGrWWh6rOTak4HII=/0x0:1200x675/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/v/A/INfBOoSwKA9Cunk7mHJw/64687718.jpg" alt="Artistas citados" width="170px" height="113px">
-          <img class="imgs_cantores" src="https://hqrock.files.wordpress.com/2017/05/os-mutantes-roupas-azuis-2.jpeg?w=816" alt="Artistas citados" width="170px">
-          <img class="imgs_cantores" src="https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2019/02/the-cure-com-andy-anderson-696x464.jpg" alt=""  width="170px">
+          
+         <button onclick="beatles()" style="border: none; background-color: transparent;"><img class="imgs_cantores" src="https://s2.glbimg.com/O0E4iuR9n-YtGrWWh6rOTak4HII=/0x0:1200x675/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2023/v/A/INfBOoSwKA9Cunk7mHJw/64687718.jpg" alt="Artistas citados" width="170px" height="113px"></button>
+
+         <button onclick="mutantes()" style="border: none; background-color: transparent;"><img class="imgs_cantores" src="https://hqrock.files.wordpress.com/2017/05/os-mutantes-roupas-azuis-2.jpeg?w=816" alt="Artistas citados" width="170px"></button>
+
+         <button onclick="theCure()" style="border: none; background-color: transparent;"><img class="imgs_cantores" src="https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2019/02/the-cure-com-andy-anderson-696x464.jpg" width="170px"></button>
         </div>
+
         <div class="img_artistas">
-          <img class="imgs_cantores" src="https://rollingstone.uol.com.br/media/_versions/joy-division-ap_widelg.jpg" alt="Artistas citados" width="170px" height="110px">
-          <img class="imgs_cantores" src="https://akamai.sscdn.co/tb/letras-blog/wp-content/uploads/2021/03/6cf085d-Queen.jpg" alt="Artistas citados" width="170px" height="110px">
-          <img class="imgs_cantores" src="https://visitaurbana.files.wordpress.com/2015/06/smiths-the-514ed3fdd5712.jpg" width="170px" height="110px">
+          <button onclick="joyDivision()" style="border: none; background-color: transparent;"><img class="imgs_cantores" src="https://rollingstone.uol.com.br/media/_versions/joy-division-ap_widelg.jpg" alt="Artistas citados" width="170px" height="110px"></button>
+          
+          <button onclick="queen()" style="border: none; background-color: transparent;"><img class="imgs_cantores" src="https://akamai.sscdn.co/tb/letras-blog/wp-content/uploads/2021/03/6cf085d-Queen.jpg" alt="Artistas citados" width="170px" height="110px"></button>
+          
+          <button onclick="smiths()" style="border: none; background-color: transparent;"><img class="imgs_cantores" src="https://visitaurbana.files.wordpress.com/2015/06/smiths-the-514ed3fdd5712.jpg" width="170px" height="110px"></button>
         </div>
       </div>
   </section>

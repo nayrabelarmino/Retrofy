@@ -103,52 +103,19 @@
     <section id="container-graficos">
         <div class="container-ranking">
             <div class="ranking">
-                <h2>Quiz Pop - Ranking</h2>
-                <table>
-                    <tr>
-                        <th>Pódio</th>
-                        <th>User</th>
-                        <th>Pontuação</th>
-                    </tr>
-                    <tr>
-                        <td class="gold">1º</td>
-                        <td>João</td>
-                        <td class="gold">1000</td>
-                    </tr>
-                    <tr>
-                        <td class="silver">2º</td>
-                        <td>Maria</td>
-                        <td class="silver">900</td>
-                    </tr>
-                    <tr>
-                        <td class="bronze">3º</td>
-                        <td>Carlos</td>
-                        <td class="bronze">800</td>
-                    </tr>
-                    <tr>
-                        <td>4º</td>
-                        <td>Júlia</td>
-                        <td>700</td>
-                    </tr>
-                    <tr>
-                        <td>5º</td>
-                        <td>Pedro</td>
-                        <td>600</td>
-                    </tr>
-                </table>
             </div>
             <div class="graficos">
-                <div class="grafico1">
+                <div>
                     <h3 class="titulo-inicial"></h3>
                     <canvas id="myChart"></canvas>
                 </div>
-                <div class="grafico2">
+                <div>
                     <h3 class="titulo-inicial"></h3>
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart1"></canvas>
                 </div>
-                <div class="grafico3">
+                <div>
                     <h3 class="titulo-inicial"></h3>
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart2"></canvas>
                 </div>
             </div>
         </div>
@@ -160,24 +127,18 @@
 </body>
 <script>
     const labels = [
-        `Questão 1 - Pop`,
-        `Questão 2 - Pop`,
-        `Questão 3 - Pop`,
-        `Questão 4 - Pop`,
-        `Questão 5 - Pop`,
-        `Questão 6 - Pop`,
-        `Questão 7 - Pop`,
-        `Questão 8 - Pop`,
-        `Questão 9 - Pop`,
-        `Questão 10 - Pop`
+        `Quiz Pop`,
+        `Quiz Rock`,
+        `Quiz Post Punk`,
     ];
+
 
     const data = {
         labels: labels,
         datasets: [{
-            label: 'Quantidade de acertos por questão',
+            label: 'Quantidade de acertos por quiz',
             backgroundColor: '',
-            data: [5, 10, 10, 2, 5, 10, 10, 4, 8, 2]
+            data: [5, 10, 10]
         }]
     };
 
@@ -185,10 +146,8 @@
         type: 'bar',
         data: data,
         options: {}
-    };
-</script>
+    }; 
 
-<script>
     const myChart = new Chart(
         document.getElementById('myChart'),
         config);

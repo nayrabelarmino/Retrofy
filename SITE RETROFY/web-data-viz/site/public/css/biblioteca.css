@@ -241,7 +241,8 @@ input:checked + .slide-container  .slide {
 	height: 11px;
 	display: block;
 	position: absolute;
-	margin-left: 120px;
+    align-items: center;
+    margin-left: 125px;
 }
 
 .nav-dots .nav-dot {

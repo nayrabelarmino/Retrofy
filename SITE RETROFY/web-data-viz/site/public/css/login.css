@@ -18,12 +18,9 @@ body{
 .div_background {
     height: 100vh;
     position: relative;
-    background: rgb(255,247,173);
     background: linear-gradient(0deg, rgba(255,247,173,1) 10%, rgb(214, 139, 255) 70%); 
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    background-size:cover;
     justify-content: center;
     align-items: center;
 }
