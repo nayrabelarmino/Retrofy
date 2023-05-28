@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="shortcut icon" href="./assets/imgLogin/logo discofone sozinho .svg" type="image/x-icon">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Cadastre-se | Retrofy</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <div class="div_background">
+        <div class="container_principal">
+            <div class="div_cadastro">
+                 <h2 class="titulo">Cadastre-se</h2>
+                <form class="form_login" id="formLogin" action="#" method="post">
+                    <label>Nome*</label>
+                    <input class="ipt_cadastro" type="text" id="ipt_nome" placeholder="" required>
+                    <label>Email*</label>
+                    <input class="ipt_cadastro" type="text" id="ipt_email" placeholder="" required>
+                    <label>Senha*</label>
+                    <input class="ipt_cadastro" type="password" id="ipt_senha" required>
+                    <select name="generos" id="selectPlaylist">
+                        <option style="color: darkgrey;" value="0">Selecione...</option>
+                        <option value="1">Pop - 1960</option>
+                        <option value="2">Pop - 1970</option>
+                        <option value="3">Pop - 1980</option>
+                        <option value="4">Rock - 1960</option>
+                        <option value="5">Rock - 1970</option>
+                        <option value="6">Rock - 1980</option>
+                        <option value="7">Post Punk - 1980</option>
+                    </select>
+                    <div class="links_login">
+                        <a class="a" href="#">Esqueci minha senha</a>
+                    </div>
+                    <button class="botao_entrar_login" type="submit" value="Entrar" onclick="cadastrar(); return false">Cadastrar</button>
+                </form>
+            </div>
+            <div class="barra"></div>
+            <div class="container_login">
+                <a href="retrofy.html">
+                  <img src="./assets/imgLogin/logo_pequena.png" alt="Logo Retrofy" width="300px"></a>
+                 Playlists e quizzes maravilhosos te esperam, <br> Clique aqui para conhecer todos eles!</p>
+                 <button onclick="irParaLogin()">Faça o login aqui!</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="/public/js/cadastro.js"></script>
+<script src="./js/funcoes.js"></script>
+
+<script>
+    function cadastrar() {
+    var nomeVar = ipt_nome.value;
+    var emailVar = ipt_email.value;
+    var senhaVar = ipt_senha.value;
+    var playlistVar = selectPlaylist.value;
+
+    if (nomeVar == "" || emailVar == "" || senhaVar == "") {
+        //cardErro.style.display = "block"
+        swal("Ops", "Preencha todos os campos.", "error")
+
+    }
+    else if (emailVar.indexOf("gmail") == -1 || emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1 || emailVar.length < 12) {
+        swal("Ops", "O e-mail cadastrado é inválido. Por favor, insira um e-mail válido", "warning")
+    }
+    else if (senhaVar.length < 10) {
+        swal("Ops", "A senha inserida é muito curta. Por favor, insira uma senha com pelo menos 8 caracteres", "warning")
+    }  else {
+        setInterval('oi', 5000)
+    
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                playlistServer: playlistVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                //cardErro.style.display = "block";
+                swal("Parábens", "Cadastro realizado com sucesso redirecionando a tela de login 😄...!", "success");
+
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, 3000)
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                swal("Ops", "Mais de um usuário com o mesmo login e senha 😭!")
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+}
+   
+</script>

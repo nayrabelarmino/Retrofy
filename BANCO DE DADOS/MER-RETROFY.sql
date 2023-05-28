@@ -22,7 +22,7 @@ constraint pkComposta primary key (idPontuacao, fkUsuario)
 CREATE TABLE votacao (
 idVotacao int,
 fkUsuario int,
-constraint fkUsuario foreign key (fkUsuario) references usuario (idUsuario),
+constraint fkUsuario_votacao foreign key (fkUsuario) references usuario (idUsuario),
 fkPlaylist int,
 constraint fkPlaylist foreign key (fkPlaylist) references playlist (idPlaylist),
 constraint pkComposta primary key (idVotacao, fkPlaylist) 
@@ -40,3 +40,10 @@ nome varchar(50),
 fkGenero int,
 constraint fkGenero foreign key (fkGenero) references genero (idGenero)
 );
+
+SELECT * FROM usuario;
+SELECT * FROM pontuacao;
+SELECT * FROM votacao;
+SELECT * FROM genero;
+SELECT * FROM playlist;
+

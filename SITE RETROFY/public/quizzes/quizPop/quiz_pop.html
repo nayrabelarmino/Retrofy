@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Pop</title>
+  <link rel="stylesheet" href="../quizzes.css">
+</head>
+
+<body>
+  <!-- start Quiz button -->
+  <div class="start_btn"><button class="comecar-btn">Começar quiz</button></div>
+
+  <!-- Info Box -->
+  <div class="info_box">
+      <div class="info-title"><span>Regras do Quiz</span></div>
+      <div class="info-list">
+          <div class="info">1. Você terá apenas <span>15 segundos</span> para cada pergunta.</div>
+          <div class="info">2. Depois de selecionar sua resposta, ela não poderá ser desfeita.</div>
+          <div class="info">3. Você não pode selecionar nenhuma opção quando o tempo acabar.</div>
+          <div class="info">4. Você não pode sair do Quiz enquanto estiver jogando.</div>
+          <div class="info">5. Você ganhará pontos com base em suas respostas corretas.</div>
+      </div>
+      <div class="buttons">
+          <button class="quit">Voltar</button>
+          <button class="restart">Continuar</button>
+      </div>
+  </div>
+  <!-- Quiz Box -->
+  <div class="quiz_box">
+      <header>
+          <div class="title">Quiz - Pop Retrofy</div>
+          <div class="timer">
+              <div class="time_left_txt">Time Left</div>
+              <div class="timer_sec">15</div>
+          </div>
+          <div class="time_line"></div>
+      </header>
+      <section>
+          <div class="que_text">
+              <!-- Aqui eu inseri a pergunta do JavaScript -->
+          </div>
+          <div class="option_list">
+              <!-- Aqui eu inseri opções de JavaScript -->
+          </div>
+      </section>
+      <!-- footer do Quiz Box -->
+      <footer>
+          <div class="total_que">
+              <!-- Aqui eu inseri o número de contagem de perguntas do JavaScript -->
+          </div>
+          <button class="next_btn">Próxima</button>
+      </footer>
+  </div>
+  <!-- Result Box -->
+  <div class="result_box">
+      <div class="icon">
+          <i class="fas fa-crown"></i>
+      </div>
+      <div class="complete_text">Você concluíu o Quiz Pop Retrofy!</div>
+      <div class="score_text">
+          <!-- Aqui eu inseri Score Result from JavaScript -->
+      </div>
+      <div class="buttons">
+          <button class="restart">Reiniciar</button>
+          <button class="quit">Sair do Quiz</button>
+      </div>
+  </div>
+
+  <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+  <script src="questoesPop.js"></script>
+
+  <!-- Inside this JavaScript file I've coded all Quiz Codes -->
+  <script src="quiz_pop.js"></script>
+</body>
+</html>
+
+<!-- <script>
+    fetch("/usuarios/cadastrarPontuacao", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.j
+                    pontuacaoServer: pontuacao,
+                    categoriaServer: categoria,
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    Swal.fire({
+
+                        imageUrl: 'assets/imgs/gif-personalidade.gif',
+                        imageWidth: 3000,
+                        title: 'Quiz finalizado',
+                        background: '#000',
+                        confirmButtonText: 'DATTEBAYO!',
+                        color: '#FFF',
+                        html: msg,
+                    }).then((result) => {
+                        setTimeout(function () {
+                            window.location = "/public/contaConfig.html";
+                        }, 1000);
+                    })
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+            return false;
+</script> -->
