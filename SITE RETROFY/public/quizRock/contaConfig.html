@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/contaConfig.css">
+    <link rel="stylesheet" href="../css/contaConfig.css">
     <link rel="shortcut icon" href="./assets/imgHome/logo discofone sozinho .svg">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Retrofy</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
-<body>
+<body scroll="si" style="overflow: hidden" onload="updatePontos(), validarSessao()"></body>
     <div id="modais"></div>
     <div>
         <nav class="menu-lateral">
@@ -21,31 +21,37 @@
             </div>
             <ul>
                 <li class="item-menu">
-                    <a href="playlists.html">
+                    <a href="../playlists.html">
                         <span class="icon"><i class="bi bi-cassette"></i></span>
                         <span class="txt-link">Playlists</span>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="quiz.html">
+                    <a href="../quiz.html">
                         <span class="icon"><i class="bi bi-journal-check"></i></span>
                         <span class="txt-link">Quiz</span>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="biblioteca.html">
+                    <a href="../biblioteca.html">
                         <span class="icon"><i class="bi bi-heart"></i></span>
                         <span class="txt-link">Biblioteca</span>
                     </a>
                 </li>
+                <li class="item-menu">
+                    <a href="../dashboard.html">
+                        <span class="icon"><i class="bi bi-bar-chart-line"></i></span>
+                        <span class="txt-link">Dashboard</span>
+                    </a>
+                </li>
                 <li class="item-menu ativo">
-                    <a href="contaConfig.html">
+                    <a href="./quizRock/contaConfig.html">
                         <span class="icon"><i class="bi bi-person-circle"></i></span>
                         <span class="txt-link">Conta</span>
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="index.html">
+                    <a href="../index.html">
                         <span class="icon-sair"><i class="bi bi-box-arrow-left"></i></span>
                         <span class="txt-link-sair">Sair</span>
                     </a>
@@ -58,93 +64,43 @@
     <div class="div-full">
         <div class="div-filha-esquerda">
             <div class="txt-inicio">
-                <h2>Configuração de conta</h2>
-                <p>Atualize seus dados e insira uma escolha um avatar.</p>
+                <h2>Perfil do Usuário</h2>
             </div>
             <div class="card user-card-full">
                 <div class="gradiente-container usuario-foto">
-                    <img src="https://i.pinimg.com/564x/82/0c/09/820c097a415d81c3bf83f848f42f9a4a.jpg" class="img-radius"
-                        alt="User-Profile-Image" height="110px">
+                    <img src="https://i.pinimg.com/564x/82/0c/09/820c097a415d81c3bf83f848f42f9a4a.jpg"
+                        class="img-radius" alt="User-Profile-Image" height="110px">
                 </div>
                 <div class="card-block">
                     <h6 class="m-b-20 p-b-5 linha font-name">Perfil Do Usuário</h6>
                     <div>
-                        <p class="informacao">Nome completo:</p>
-                        <h6 class="informacao-usuario">Nayra Belarmino</h6>
+                        <p class="informacao">Nome:</p>
+                        <h6 class="informacao-usuario"><span id="b_usuario"></span></h6>
                     </div>
                     <div class="col-sm-6">
                         <p class="informacao">Email:</p>
-                        <h6 class="informacao-usuario">nayra@gmail.com</h6>
+                        <h6 class="informacao-usuario"><span id="email"></span></h6>
                     </div>
                 </div>
-                <button class="botao-editar" onclick="editarPerfil()">Editar</button>
             </div>
         </div>
         <div class="div-filha-direita">
             <div class="txt-inicio">
                 <h2 class="nome-tabela">Histórico de tentativas</h2>
             </div>
-        <div class="historico">
-            <table>
-                <thead>
-                    <tr class="titulo-tabela">
-                        <td>Quiz</td>
-                        <td>Pontuação</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Pop</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Rock</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Post Punk</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Pop</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Rock</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Post Punk</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>Pop</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>Rock</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>Post Punk</td>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>Pop</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>Rock</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>Post Punk</td>
-                        <td>8</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="historico">
+                <table id="infos">
+                    <thead>
+                        <tr class="titulo-tabela">
+                            <td>Quiz</td>
+                            <td>Pontuação</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
 
     </div>
 
@@ -152,8 +108,16 @@
 
 </html>
 
-<script src="./js/contaConfig.js"></script>
 <script>
+
+    var btnExpandir = document.querySelector('#botao-expandir')
+    var menuSide = document.querySelector('.menu-lateral')
+
+    btnExpandir.addEventListener('click', function () {
+        menuSide.classList.toggle('expandir')
+    })
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    email.innerHTML = sessionStorage.EMAIL_USUARIO;
 
     function updatePontos() {
         //aguardar();
@@ -170,7 +134,7 @@
                         var publicacao = resposta[contador];
                         // criando e manipulando elementos do HTML via JavaScript
 
-
+                        console.log(publicacao)
                         // // cria um novo elemento div
                         // e dá à ele conteúdo
                         var tdpontuacao = document.createElement("td");
@@ -182,7 +146,7 @@
                         tdcategoria.className = "text"
 
                         tdpontuacao.innerHTML = `${publicacao.pontuacao}pts.`;
-                        tdcategoria.innerHTML = `${publicacao.categoria}%`;
+                        tdcategoria.innerHTML = `${publicacao.categoria}`;
 
 
                         // (APPENDCHILD) Cria um novo elemento de parágrafo e adiciona-o ao final do documento
@@ -201,6 +165,6 @@
             console.error(resposta);
             // finalizarAguardar();
         });
-}
+    }
 
 </script>

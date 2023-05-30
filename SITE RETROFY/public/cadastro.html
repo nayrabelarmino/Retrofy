@@ -24,6 +24,7 @@
                     <input class="ipt_cadastro" type="text" id="ipt_email" placeholder="" required>
                     <label>Senha*</label>
                     <input class="ipt_cadastro" type="password" id="ipt_senha" required>
+                    <label>Selecione o seu gênero e ano preferido*</label>
                     <select name="generos" id="selectPlaylist">
                         <option style="color: darkgrey;" value="0">Selecione...</option>
                         <option value="1">Pop - 1960</option>
@@ -45,7 +46,7 @@
                 <a href="retrofy.html">
                   <img src="./assets/imgLogin/logo_pequena.png" alt="Logo Retrofy" width="300px"></a>
                  Playlists e quizzes maravilhosos te esperam, <br> Clique aqui para conhecer todos eles!</p>
-                 <button onclick="irParaLogin()">Faça o login aqui!</button>
+                 <a href="login.html"><button onclick="irParaLogin()">Faça o login aqui!</button></a>
             </div>
         </div>
     </div>
@@ -68,8 +69,10 @@
     }
     else if (emailVar.indexOf("gmail") == -1 || emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1 || emailVar.length < 12) {
         swal("Ops", "O e-mail cadastrado é inválido. Por favor, insira um e-mail válido", "warning")
+    } else if (nomeVar.length > 25) {
+        swal("Ops", "O nome cadastrado é muito grande. Por favor, insira um nome válido", "warning")
     }
-    else if (senhaVar.length < 10) {
+    else if (senhaVar.length < 8) {
         swal("Ops", "A senha inserida é muito curta. Por favor, insira uma senha com pelo menos 8 caracteres", "warning")
     }  else {
         setInterval('oi', 5000)
@@ -105,7 +108,7 @@
                 limparFormulario();
                 finalizarAguardar();
             } else {
-                swal("Ops", "Mais de um usuário com o mesmo login e senha 😭!")
+                swal("Ops", "Confira se os dados foram inseridos de maneira correta😭!")
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);

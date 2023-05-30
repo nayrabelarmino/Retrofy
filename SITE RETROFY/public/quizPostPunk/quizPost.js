@@ -50,7 +50,7 @@ restart_quiz.onclick = ()=>{
     que_numb = 1;
     userScore = 0;
     widthValue = 0;
-    showQuetions(que_count); //chamando a função showQestions
+    showQuetions(que_count); //chamando a função showQuestions
     queCounter(que_numb); //passando valor que_numb para queCounter
     clearInterval(counter); //limpar contador
     clearInterval(counterLine); //limpar counterLine

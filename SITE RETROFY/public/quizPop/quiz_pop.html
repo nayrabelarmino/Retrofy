@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Pop</title>
-  <link rel="stylesheet" href="/web-data-viz/site/public/quizzes/quizzes.css">
+  <link rel="stylesheet" href="../css/quizzes.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
   <!-- Quiz Box -->
   <div class="quiz_box">
       <header>
-          <div class="title">Quiz - Rock Retrofy</div>
+          <div class="title">Quiz - Pop Retrofy</div>
           <div class="timer">
               <div class="time_left_txt">Time Left</div>
               <div class="timer_sec">15</div>
@@ -58,7 +58,7 @@
       <div class="icon">
           <i class="fas fa-crown"></i>
       </div>
-      <div class="complete_text">Você concluíu o Quiz Rock Retrofy!</div>
+      <div class="complete_text">Você concluíu o Quiz Pop Retrofy!</div>
       <div class="score_text">
           <!-- Aqui eu inseri Score Result from JavaScript -->
       </div>
@@ -67,10 +67,52 @@
           <button class="quit">Sair do Quiz</button>
       </div>
   </div>
+
   <!-- Inside this JavaScript file I've inserted Questions and Options only -->
-  <script src="/web-data-viz/site/public/quizzes/quizRock/questoesRock.js"></script>
+  <script src="questoesPop.js"></script>
 
   <!-- Inside this JavaScript file I've coded all Quiz Codes -->
-  <script src="/web-data-viz/site/public/quizzes/quizRock/quizRock.js"></script>
+  <script src="quiz_pop.js"></script>
 </body>
 </html>
+
+<!-- <script>
+    fetch("/usuarios/cadastrarPontuacao", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.j
+                    pontuacaoServer: pontuacao,
+                    categoriaServer: categoria,
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    Swal.fire({
+
+                        imageUrl: 'assets/imgs/gif-personalidade.gif',
+                        imageWidth: 3000,
+                        title: 'Quiz finalizado',
+                        background: '#000',
+                        confirmButtonText: 'DATTEBAYO!',
+                        color: '#FFF',
+                        html: msg,
+                    }).then((result) => {
+                        setTimeout(function () {
+                            window.location = "/public/contaConfig.html";
+                        }, 1000);
+                    })
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+            return false;
+</script> -->

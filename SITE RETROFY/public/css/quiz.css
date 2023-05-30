@@ -69,7 +69,7 @@ ul li.item-menu a{
     padding: 20px 4%;
     display: flex;
     margin-bottom: 20px;
-    line-height: 40px;
+    line-height: 25px;
 }
 
 .txt-link{
@@ -151,6 +151,7 @@ h3 {
     padding: 15px;
     align-items: center;
     justify-content: center;
+    margin-left: 10px;
 }
 
 .botao-quiz:hover {
@@ -204,10 +205,6 @@ section img:hover {
     margin-top:-8px;
 }
 
-#myChart {
-    margin-left: 180px;
-}
-
 table {
     color: #5A008D;
     border-collapse: collapse;
@@ -240,5 +237,25 @@ td {
 }
 
 .ranking h2 {
+    margin-left: 180px;
+}
+
+.titulo-inicial-chart1 {
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+
+#myChart {
+    width: 200px;
+}
+
+.grafico-1 {
+    border: 1px solid #5A008D;
+    border-radius: 20px;
+    padding: 20px;
+    width: 20rem;
+    height: 55vh;
+    justify-content: center;
+    align-items: center;
     margin-left: 180px;
 }

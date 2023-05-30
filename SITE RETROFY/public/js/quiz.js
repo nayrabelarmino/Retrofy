@@ -1,4 +1,10 @@
 function quizPop() {
+    var qtdPop = 0
+
+    for (var contador = 0; contador < quizPop.length; contador++) {
+        qtdPop++;
+        console.log (quizPop[qtdPop]);
+    }
     window.parent.location.href = "../quizPop/quiz_pop.html"
 }
 

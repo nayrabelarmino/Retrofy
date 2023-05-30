@@ -38,7 +38,13 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="contaConfig.html">
+                    <a href="dashboard.html">
+                        <span class="icon"><i class="bi bi-bar-chart-line"></i></span>
+                        <span class="txt-link">Dashboard</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="./quizRock/contaConfig.html">
                         <span class="icon"><i class="bi bi-person-circle"></i></span>
                         <span class="txt-link">Conta</span>
                     </a>
@@ -51,7 +57,6 @@
                 </li>
             </ul>
         </nav>
-        <a href="#" class="btn"></a>
     </div>
     <div class="inicio-txt">
         <h2>Vamos jogar?</h2>
@@ -75,7 +80,7 @@
                     <img src="https://m.media-amazon.com/images/M/MV5BMTdjNWIwOTAtMmFhMC00YzRhLTkzM2MtY2I3Yzc2ODc4MTdlXkEyXkFqcGdeQXVyMjUyNDk2ODc@._V1_.jpg" alt="" width="200px">
                 </section>
             </main>
-            <a href="quizzes/quizPop/quiz_pop.html"><button class="botao-quiz" onclick="quizPop()">Jogar!</button></a>
+            <a href="./quizPop/quiz_pop.html"><button class="botao-quiz" onclick="quizPop()">Jogar!</button></a>
         </div>
         <div class="quiz">
             <h3>Rock</h3>
@@ -86,7 +91,7 @@
                     <img src="https://arquivos.consultoriadorock.com/content/2017/10/09-heaven-and-Hell-600x600.jpg" alt="" width="200px">
                 </section>
             </main>
-            <button class="botao-quiz" onclick="quizRock()">Jogar!</button>
+            <a href="./quizRock/quizRock.html"><button class="botao-quiz" onclick="quizRock()">Jogar!</button></a>
         </div>
         <div class="quiz">
             <h3>Post Punk</h3>
@@ -97,61 +102,9 @@
                     <img src="https://i.discogs.com/oJ85N6HJOBPwHlzIUJpersJGDpAhO9zXYt__ulYOJSY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4MjEz/NS0xNjY4MTM5NDE5/LTk5NjguanBlZw.jpeg" alt="" width="200px">
                 </section>
             </main>
-            <button class="botao-quiz" onclick="quizPostPunk()">Jogar!</button>
+            <a href="./quizPostPunk/quizPost.html"><button class="botao-quiz" onclick="quizPostPunk()">Jogar!</button></a>
         </div>  
     </div>
-    <section id="container-graficos">
-        <div class="container-ranking">
-            <div class="ranking">
-            </div>
-            <div class="graficos">
-                <div>
-                    <h3 class="titulo-inicial"></h3>
-                    <canvas id="myChart"></canvas>
-                </div>
-                <div>
-                    <h3 class="titulo-inicial"></h3>
-                    <canvas id="myChart1"></canvas>
-                </div>
-                <div>
-                    <h3 class="titulo-inicial"></h3>
-                    <canvas id="myChart2"></canvas>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="filha2">
-        <h2 class="titulo-inicial"></h2>
-        <canvas id="myChart"></canvas>
-    </div>
 </body>
-<script>
-    const labels = [
-        `Quiz Pop`,
-        `Quiz Rock`,
-        `Quiz Post Punk`,
-    ];
-
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Quantidade de acertos por quiz',
-            backgroundColor: '',
-            data: [5, 10, 10]
-        }]
-    };
-
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {}
-    }; 
-
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config);
-</script>
-
 </html>
 <script src="js/quiz.js"></script>

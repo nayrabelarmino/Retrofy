@@ -25,7 +25,7 @@ router.get("/listarPontuacao", function (req, res) {
 });
 
 router.post("/cadastrarPontuacao", function (req, res) {
-    usuarioController.cadastrarPontuacao(req, res);
+    usuarioController.cadastrarPontuacao(req, res);
 })
 
 module.exports = router;

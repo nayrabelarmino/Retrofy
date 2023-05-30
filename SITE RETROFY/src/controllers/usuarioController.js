@@ -118,15 +118,18 @@ function cadastrar(req, res) {
         // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
         var pontuacao = req.body.pontuacaoServer;
         var categoria = req.body.categoriaServer;
+        var fkUsuario = req.body.usuarioServer;
     
         // Faça as validações dos valores
         if (pontuacao == undefined) {
             res.status(400).send("Seu pontos está undefined!"); 
         } else if (categoria == undefined) {
             res.status(400).send("Sua categoria está undefined!"); 
+        }else if (fkUsuario == undefined) {
+            res.status(400).send("Sua fk usuario está undefined!"); 
         } else {
             // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-            usuarioModel.cadastrarPontuacao(pontuacao, categoria)
+            usuarioModel.cadastrarPontuacao(pontuacao, categoria, fkUsuario)
                 .then(
                     function (resultado) {
                         res.json(resultado);

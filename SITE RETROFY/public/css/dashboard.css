@@ -97,45 +97,70 @@ ul li.item-menu a{
 }
 
 .inicio-txt {
-    margin-top: 90px;
-    margin-left: 190px;
-    align-items: center;
     color:#5A008D;
-    margin-bottom: 20px;
-}   
-
-.retrofy {
-    display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 90px;
     margin-left: 180px;
-    background-color: #bd90d673;
-    height: 420px;
-    width: 430px;
-    border-radius: 20px;
+    width: 840px;
+    margin-bottom: 30px;
 }
 
-h2 {
+#container-graficos {
+    display: flex;
+    gap: 1vw;
+}
+
+h3 {
     color: #5A008D;
-    margin-bottom: 35px;
+    margin-bottom: 5px;
 }
 
-.div-principal {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-
+.grafico-1 {
+    border: 1px solid #5A008D;
+    border-radius: 20px;
+    padding: 20px;
+    padding-bottom: 35px;
+    margin-left: 180px;
+    height: 358px;
+    width: 460px;
 }
 
-.votacao {
-    display: flex;
+#grafico1 {
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+}
+
+.grafico-2 {
+    border: 1px solid #5A008D;
+    border-radius: 20px;
+    padding: 20px;
+    width: 20rem;
+    height: 55vh;
     justify-content: center;
     align-items: center;
-    margin-left: 180px;
-    background-color: #bd90d673;
-    height: 420px;
-    width: 430px;
+    text-align: center;
+}
+
+.titulo-grafico {
+    text-align: center;
+    color: #5A008D;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#grafico2 {
+    height: 200px;
+    width: 100px;
+}
+
+.grafico-3 {
+    border: 1px solid #5A008D;
     border-radius: 20px;
-    margin-left: 70px;
+    padding: 20px;
+    width: 20rem;
+    height: 55vh;
+    text-align: center;
+    align-items: center;
 }

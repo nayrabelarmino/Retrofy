@@ -28,7 +28,7 @@
             </div>
             <ul>
                 <li class="item-menu ativo">
-                    <a href="">
+                    <a href="playlists.html">
                         <span class="icon"><i class="bi bi-cassette"></i></span>
                         <span class="txt-link">Playlists</span>
                     </a>
@@ -46,10 +46,16 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="contaConfig.html">
+                    <a href="dashboard.html">
+                        <span class="icon"><i class="bi bi-bar-chart-line"></i></span>
+                        <span class="txt-link">Dashboard</span>
+                    </a>
+                </li>
+                <li class="item-menu">
+                    <a href="./quizRock/contaConfig.html">
                         <span class="icon"><i class="bi bi-person-circle"></i></span>
                         <span class="txt-link">Conta</span>
-                    </a>    
+                    </a>
                 </li>
                 <li class="item-menu">
                     <a href="index.html">
@@ -97,8 +103,6 @@
     </div> 
     <div class="retrofy">
         <div id="res"></div>
-        <!-- <iframe style="border-radius:25px" src="https://open.spotify.com/embed/playlist/3LQAId3dSC4h2PUgsvf887?utm_source=generator" 
-        width="45%" height="200px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
     </div>   
 </body>
 </html>
@@ -107,19 +111,15 @@
 
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO
 
-
-
     let proximaAtualizacao;
 
     window.onload = obterDadosGrafico(1);
-
 
     function obterDadosGrafico(idAquario) {
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
-
 
         fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
@@ -153,8 +153,8 @@
                 },
                 {
                     yAxisID: 'y-totalpersonagens',
-                    label: 'nome_playlist Favorito',
-                    backgroundColor: ['#FF1493', '#FFFF00', '#FF4500', '#00FF00', '#4B0082', '#0000FF', '#FFF', '#ADD8e6', '#FF007F', '#008000'],
+                    label: '',
+                    backgroundColor: ['#F887C9', '#BF6BB6', '#85529F', '#4B3B83', '#002563', '#0000FF'],
                     fill: true,
                     data: []
                 }
@@ -184,7 +184,7 @@
                 stacked: false,
                 title: {
                     display: true,
-                    text: 'Playlists favoritas'
+                    text: 'Playlists favoritas dos usuários'
                 },
 
                 scales: {

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/biblioteca.css">
-    <link rel="shortcut icon" href="../public/assets/imgHome/logo discofone sozinho .svg">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="shortcut icon" href="./assets/imgHome/logo discofone sozinho .svg">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Retrofy</title>
+    <title>Hora do Quiz! - Retrofy</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
@@ -31,13 +31,13 @@
                         <span class="txt-link">Quiz</span>
                     </a>
                 </li>
-                <li class="item-menu ativo">
+                <li class="item-menu">
                     <a href="biblioteca.html">
                         <span class="icon"><i class="bi bi-heart"></i></span>
                         <span class="txt-link">Biblioteca</span>
                     </a>
                 </li>
-                <li class="item-menu">
+                <li class="item-menu ativo">
                     <a href="dashboard.html">
                         <span class="icon"><i class="bi bi-bar-chart-line"></i></span>
                         <span class="txt-link">Dashboard</span>
@@ -59,26 +59,23 @@
         </nav>
     </div>
     <div class="inicio-txt">
-        <h2>Biblioteca</h2>
-        <p>Veja aqui suas playlists geradas!</p>
+        <h2>Análise - Quizzes</h2><br><br>
+        <p>A seguir veja uma análise dos quizzes:</p>
     </div>
-    <div class="div-principal">
-        <div class="retrofy">
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/5ZmgTj6iBUF8okpIcUqguf?utm_source=generator" width="400px"
-                height="380px" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"></iframe>
-            </div>
-            <div class="votacao">
-                <iframe style="border-radius:12px"
-                    src="https://open.spotify.com/embed/playlist/3LQAId3dSC4h2PUgsvf887?utm_source=generator"
-                    width="400px" height="380px" frameBorder="0" allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"></iframe>
-            </div>
+    <div id="container-graficos">
+        <div class="grafico-1">
+            <h3 class="titulo-grafico">Quiz mais jogado pelos usuários</h3><br>
+            <canvas id="grafico1"></canvas>
         </div>
+        <div class="grafico-2">
+            <h3 class="titulo-grafico">Seus acertos e erros (%)</h3>
+            <canvas id="grafico2"></canvas>
+        </div>
+    </div>
 </body>
 
 </html>
-<script src="/public/js/biblioteca.js"></script>
+<script>
+
+</script>
+<script src="/public/js/dashboard.js"></script>

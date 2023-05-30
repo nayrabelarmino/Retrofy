@@ -33,10 +33,12 @@ continue_btn.onclick = ()=>{
 let timeValue =  15;
 let que_count = 0;
 let que_numb = 1;
-let userScore = 0;
+let pontuacao = 0;
 let counter;
 let counterLine;
 let widthValue = 0;
+
+
 
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
@@ -48,7 +50,7 @@ restart_quiz.onclick = ()=>{
     timeValue = 15;
     que_count = 0;
     que_numb = 1;
-    userScore = 0;
+    pontuacao = 0;
     widthValue = 0;
     showQuetions(que_count); //chamando a função showQestions
     queCounter(que_numb); //passando valor que_numb para queCounter
@@ -121,11 +123,11 @@ function optionSelected(answer){
     const allOptions = option_list.children.length; //obtendo todos os itens de opção
 
     if(userAns == correcAns){ //se a opção selecionada pelo usuário for igual à resposta correta do array
-        userScore += 1; // atualizando o valor da pontuação com 1
+        pontuacao += 1; // atualizando o valor da pontuação com 1
         answer.classList.add("correct"); // adicionando cor verde para corrigir a opção selecionada
         answer.insertAdjacentHTML("beforeend", tickIconTag); //adicionando ícone de marca para corrigir a opção selecionada
         console.log("Correct Answer");
-        console.log("Your correct answers = " + userScore);
+        console.log("Your correct answers = " + pontuacao);
     }else{
         answer.classList.add("incorrect"); // adicionando cor vermelha para corrigir a opção selecionada
         answer.insertAdjacentHTML("beforeend", crossIconTag); //adicionando ícone de cruz para corrigir a opção selecionada
@@ -150,60 +152,98 @@ function showResult(){
     quiz_box.classList.remove("activeQuiz"); //ocultando quiz box
     result_box.classList.add("activeResult"); //mostrando result box
     const scoreText = result_box.querySelector(".score_text");
-    if (userScore == 10){ // se o usuário marcou mais de 3
-        //criando uma nova tag span e passando o número da pontuação do usuário e o número total da pergunta
-        let scoreTag = `<span>Parabéns! 🎉  Você gabaritou! Acertou  ${userScore} de ${questions.length}</span>`;
+    if (pontuacao == 10){ 
+        let scoreTag = `<span>Parabéns! 🎉 Você gabaritou! Acertou  ${pontuacao} de ${questions.length}</span>`;
         scoreText.innerHTML = scoreTag;  //adicionando nova tag span dentro do score_Text
     }
-    else if(userScore > 5){ // se o usuário marcou mais de 1
-        let scoreTag = `<span>Mandou bem, mas ainda da para melhorar! 😎 Você acertou ${userScore} de ${questions.length}</span>`;
+    else if(pontuacao > 5){ 
+        let scoreTag = `<span>Mandou bem, mas ainda da para melhorar! 😎 Você acertou ${pontuacao} de ${questions.length}</span>`;
         scoreText.innerHTML = scoreTag;
     }
-    else{ // se o usuário marcou menos de 1
-        let scoreTag = `<span>Poxa, não foi dessa vez, né? 😐 Você acertou ${userScore} de ${questions.length}</span>`;
+    else {
+        let scoreTag = `<span>Poxa, não foi dessa vez, né? 😐 Você acertou ${pontuacao} de ${questions.length}</span>`;
         scoreText.innerHTML = scoreTag;
-    }
+    }  
+
+    fetch("/usuarios/cadastrarPontuacao", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.j
+            pontuacaoServer: pontuacao,
+            categoriaServer: categoria
+        })
+    }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            Swal.fire({
+
+                imageUrl: '',
+                imageWidth: 3000,
+                title: 'Quiz finalizado',
+                background: '#000',
+                confirmButtonText: 'DATTEBAYO!',
+                color: '#FFF',
+                html: msg,
+            }).then((result) => {
+                setTimeout(function () {
+                    window.location = "dashboard.html";
+                }, 1000);
+            })
+        } else {
+            throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+
+    return false;
 }
 
-function startTimer(time){
-    counter = setInterval(timer, 1000);
-    function timer(){
-        timeCount.textContent = time; //alterando o valor de timeCount com valor de tempo
-        time--; // decrementa o valor do tempo
-        if(time < 9){ //se o timer for menor que 9
-            let addZero = timeCount.textContent;
-            timeCount.textContent = "0" + addZero; //adiciona um 0 antes do valor do tempo
-        }
-        if(time < 0){ //se o timer for menor que 0
-            clearInterval(counter); //limpar contador
-            timeText.textContent = "Time Off"; //muda o texto da hora para folga
-            const allOptions = option_list.children.length; //obtendo todos os itens de opção
-            let correcAns = questions[que_count].answer; //obtendo a resposta correta do array
-            for(i=0; i < allOptions; i++){
-                if(option_list.children[i].textContent == correcAns){ //se houver uma opção que corresponda a uma resposta de array
-                    option_list.children[i].setAttribute("class", "option correct"); //adicionando a cor verde à opção correspondente
-                    option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adicionando o ícone de marca para a opção correspondente
-                    console.log("Time Off: Auto selected correct answer.");
-                }
-            }
-            for(i=0; i < allOptions; i++){
-                option_list.children[i].classList.add("disabled"); //uma vez que o usuário seleciona uma opção, desativa todas as opções
-            }
-            next_btn.classList.add("show"); // mostra o próximo botão se o usuário selecionou alguma opção
-        }
-    }
-}
+// function startTimer(time){
+//     counter = setInterval(timer, 1000);
+//     function timer(){
+//         timeCount.textContent = time; //alterando o valor de timeCount com valor de tempo
+//         time--; // decrementa o valor do tempo
+//         if(time < 9){ //se o timer for menor que 9
+//             let addZero = timeCount.textContent;
+//             timeCount.textContent = "0" + addZero; //adiciona um 0 antes do valor do tempo
+//         }
+//         if(time < 0){ //se o timer for menor que 0
+//             clearInterval(counter); //limpar contador
+//             timeText.textContent = "Time Off"; //muda o texto da hora para folga
+//             const allOptions = option_list.children.length; //obtendo todos os itens de opção
+//             let correcAns = questions[que_count].answer; //obtendo a resposta correta do array
+//             for(i=0; i < allOptions; i++){
+//                 if(option_list.children[i].textContent == correcAns){ //se houver uma opção que corresponda a uma resposta de array
+//                     option_list.children[i].setAttribute("class", "option correct"); //adicionando a cor verde à opção correspondente
+//                     option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adicionando o ícone de marca para a opção correspondente
+//                     console.log("Time Off: Auto selected correct answer.");
+//                 }
+//             }
+//             for(i=0; i < allOptions; i++){
+//                 option_list.children[i].classList.add("disabled"); //uma vez que o usuário seleciona uma opção, desativa todas as opções
+//             }
+//             next_btn.classList.add("show"); // mostra o próximo botão se o usuário selecionou alguma opção
+//         }
+//     }
+// }
 
-function startTimerLine(time){
-    counterLine = setInterval(timer, 29);
-    function timer(){
-        time += 1; //atualizando o valor do tempo com 1
-        time_line.style.width = time + "px"; //aumento da largura da time_line com px por valor de tempo
-        if(time > 549){ //se o valor do tempo for maior que 549
-            clearInterval(counterLine); //limpando counterLine
-        }
-    }
-}
+// function startTimerLine(time){
+//     counterLine = setInterval(timer, 29);
+//     function timer(){
+//         time += 1; //atualizando o valor do tempo com 1
+//         time_line.style.width = time + "px"; //aumento da largura da time_line com px por valor de tempo
+//         if(time > 549){ //se o valor do tempo for maior que 549
+//             clearInterval(counterLine); //limpando counterLine
+//         }
+//     }
+// }
 
 function queCounter(index){
     //criando uma nova tag span e passando o número da pergunta e o total da pergunta

@@ -8,7 +8,7 @@
 }
 
 body {
-    height: 90vh;
+    height: 80vh;
     background-color: #F6F3EA;
     color: #3B2F57;
     overflow: hidden scroll;
@@ -25,6 +25,7 @@ nav.menu-lateral {
     left: 0;
     overflow: hidden;
     transition: .7s;
+    z-index: 2;
 }
 
 nav.menu-lateral.expandir {
@@ -68,7 +69,7 @@ ul li.item-menu a{
     padding: 20px 4%;
     display: flex;
     margin-bottom: 20px;
-    line-height: 40px;
+    line-height: 25px;
 }
 
 .txt-link{
@@ -107,13 +108,11 @@ h2.titulo-inicial {
 
 .container-principal {
     background-color: #dcb9ffaf;
-    height: 320px;
+    height: 300px;
     border-radius: 30px; 
-    padding: 50px;
-    display: flex;
+    padding: 45px;
     justify-content: center;
     width: 90%;
-    flex-direction: column;
     gap: 1vw;
     margin-left: 40px;
 }
@@ -131,22 +130,11 @@ h2.titulo-inicial {
 }
 
 .container-genero {
-    flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
     width: 50%; 
-    margin-right: 10px;
     gap: 1vh;
-}
-
-.container-decada {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    margin-left: 10px;
 }
 
 .txt-div {
@@ -172,6 +160,8 @@ h2.titulo-inicial {
     padding: 20px;
     align-items: center;
     justify-content: center;
+    margin-left: 150px;
+    margin-top: 25px;
 }
 
 .botao-playlist:hover {
@@ -179,11 +169,11 @@ h2.titulo-inicial {
 }
 
 select {
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 10px;
     padding: 6px;
     border: none;
-    width: 140px;
+    width: 180px;
     color: #965cb6;
 }   
 
@@ -217,8 +207,9 @@ p {
     align-items: center;
     gap: 3vh;
     width: 30%;
-    height: 100vh;
+    height: 90vh;
     margin-left: 50px;
+    margin-top: 50px;
 }
 
 .retrofy {
