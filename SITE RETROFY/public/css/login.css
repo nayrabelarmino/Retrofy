@@ -88,6 +88,11 @@ button {
     margin-top: 10px;
 }
 
+button:hover {
+    background-color: #9d74b4;
+    color: #ffffff;
+}
+
 .form_login .botao_entrar_login:hover{
     background-color: #9d74b4;
 }

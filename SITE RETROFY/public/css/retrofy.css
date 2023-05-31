@@ -23,7 +23,6 @@ body{
     border-bottom: 1px solid #ffffff;
     justify-content: space-between;
     backdrop-filter: blur(20px);
-
 }
 
 .header a {
@@ -35,9 +34,11 @@ body{
     width: 300px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     list-style: none;
     color: #3B2F57;
+    width: 75%;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 #inicio{
@@ -77,13 +78,6 @@ body{
     width: 150px;
 }
 
-.navbar{
-    width: 75%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    list-style: none;
-}
 
 .navbar.ativa {
     color:#000000;
@@ -97,7 +91,6 @@ body{
 
 .navbar a:hover{
     color: #ffffff;
-    border-bottom: solid 2px #fffdfd;
 }
 
 .agora a{
@@ -117,12 +110,12 @@ body{
     border: none;
     font-family: 'Montserrat';
     cursor: pointer;
-
 }
 
 .login:hover {
     box-shadow: 0 12px 16px 0 #624f8f77, 0 17px 50px 0 rgba(202, 100, 194, 0.19);
-    border-bottom: none;
+    color: #fff;
+    background-color: #C3ACD0;
 }
 
 .divTxtInicio{
@@ -151,6 +144,7 @@ h1{
     color: #3B2F57;
     font-size: 30px;
     font-family: "Montserrat";
+    font-style: oblique;
 }
 
 .container_principal {

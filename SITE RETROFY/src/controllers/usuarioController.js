@@ -98,7 +98,8 @@ function cadastrar(req, res) {
             );
     }
     function listarPontuacao(req, res) {
-        usuarioModel.listarPontuacao()
+        var usuario = req.params.usuario
+        usuarioModel.listarPontuacao(usuario)
             .then(function (resultado) {
                 if (resultado.length > 0) {
                     res.status(200).json(resultado);

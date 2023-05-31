@@ -13,7 +13,7 @@ constraint fkPlaylist_votacao foreign key (fkPlaylist) references playlist (idPl
 );
 
 CREATE TABLE pontuacao (
-idPontuacao int,
+idPontuacao int auto_increment,
 pontuacao float,
 categoria varchar(20),
 fkUsuario int,
@@ -48,4 +48,5 @@ SELECT * from playlist;
 SELECT COUNT(usuario.fkPlaylist) as voto, playlist.nome AS nome_playlist 
 FROM usuario JOIN playlist ON  playlist.idPlaylist = usuario.fkPlaylist group by usuario.fkPlaylist;
 
-SELECT pontuacao, categoria FROM pontuacao JOIN usuario ON fkUsuario = idUsuario
+SELECT pontuacao, categoria FROM pontuacao JOIN usuario ON fkUsuario = idUsuario order by idPontuacao desc;
+

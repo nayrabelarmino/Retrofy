@@ -45,7 +45,7 @@ btnExpandir.addEventListener('click', function(){
     const data2 = {
         labels: labels2,
         datasets: [{
-            label: 'Acertos e erros',
+            label: 'Quantidade',
             backgroundColor: ['#F887C9', '#BF6BB6', '#85529F', '#4B3B83', '#002563', '#0000FF'],
             data: [7, 3]
         }]

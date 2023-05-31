@@ -41,10 +41,10 @@ function cadastrarPontuacao(pontuacao, categoria, fkUsuario) {
     return database.executar(instrucao);
 }
 
-function listarPontuacao() {
+function listarPontuacao(usuario) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPontuacao()");
     var instrucao = `
-    SELECT pontuacao, categoria FROM pontuacao JOIN usuario ON fkUsuario = idUsuario;
+    SELECT pontuacao, categoria FROM pontuacao JOIN usuario ON fkUsuario = idUsuario where idUsuario = ${usuario} order by idPontuacao desc;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

@@ -1,4 +1,4 @@
-//selecionando todos os elementos necessários
+    //selecionando todos os elementos necessários
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
@@ -26,18 +26,20 @@ continue_btn.onclick = ()=>{
     quiz_box.classList.add("activeQuiz"); //show quiz box
     showQuetions(0); //calling showQestions function
     queCounter(1); //passing 1 parameter to queCounter
-    startTimer(15); //calling startTimer function
-    startTimerLine(0); //calling startTimerLine function
+    // startTimer(15); //calling startTimer function
+    // startTimerLine(0); //calling startTimerLine function
 }
 
 let timeValue =  15;
 let que_count = 0;
 let que_numb = 1;
 let pontuacao = 0;
+let categoria = 'Rock'
 let counter;
 let counterLine;
+let msg = "";
+let imageUrl="";
 let widthValue = 0;
-
 
 
 const restart_quiz = result_box.querySelector(".buttons .restart");
@@ -56,8 +58,8 @@ restart_quiz.onclick = ()=>{
     queCounter(que_numb); //passando valor que_numb para queCounter
     clearInterval(counter); //limpar contador
     clearInterval(counterLine); //limpar counterLine
-    startTimer(timeValue); //chamando a função startTimer
-    startTimerLine(widthValue); //chamando a função startTimerLine
+    // startTimer(timeValue); //chamando a função startTimer
+    // startTimerLine(widthValue); //chamando a função startTimerLine
     timeText.textContent = "Time Left"; //alterar o texto de timeText para Time Left
     next_btn.classList.remove("show"); //ocultar o próximo botão
 }
@@ -79,8 +81,8 @@ next_btn.onclick = ()=>{
         queCounter(que_numb); //passando valor que_numb para queCounter
         clearInterval(counter); //limpar contador
         clearInterval(counterLine); //limpar counterLine
-        startTimer(timeValue); //chamando a funcao startTimer
-        startTimerLine(widthValue); //chamando a funcao startTimerLine
+        // startTimer(timeValue); //chamando a funcao startTimer
+        // startTimerLine(widthValue); //chamando a funcao startTimerLine
         timeText.textContent = "Time Left"; //alterar o timeText para Time Left
         next_btn.classList.remove("show"); //ocultar o próximo botão
     }else{
@@ -150,19 +152,19 @@ function optionSelected(answer){
 function showResult(){
     info_box.classList.remove("activeInfo"); //ocultando info box
     quiz_box.classList.remove("activeQuiz"); //ocultando quiz box
-    result_box.classList.add("activeResult"); //mostrando result box
+    result_box.classList.remove("activeResult"); //mostrando result box
     const scoreText = result_box.querySelector(".score_text");
     if (pontuacao == 10){ 
-        let scoreTag = `<span>Parabéns! 🎉 Você gabaritou! Acertou  ${pontuacao} de ${questions.length}</span>`;
-        scoreText.innerHTML = scoreTag;  //adicionando nova tag span dentro do score_Text
+        msg = `<span>Parabéns! 🎉 Você gabaritou! Acertou  ${pontuacao} de ${questions.length}</span>`;
+        scoreText.innerHTML = msg;  //adicionando nova tag span dentro do score_Text
     }
     else if(pontuacao > 5){ 
-        let scoreTag = `<span>Mandou bem, mas ainda da para melhorar! 😎 Você acertou ${pontuacao} de ${questions.length}</span>`;
-        scoreText.innerHTML = scoreTag;
+        msg = `<span>Mandou bem, mas ainda da para melhorar! 😎 Você acertou ${pontuacao} de ${questions.length}</span>`;
+        scoreText.innerHTML = msg;
     }
     else {
-        let scoreTag = `<span>Poxa, não foi dessa vez, né? 😐 Você acertou ${pontuacao} de ${questions.length}</span>`;
-        scoreText.innerHTML = scoreTag;
+        msg = `<span>Poxa, não foi dessa vez, né? 😐 Você acertou ${pontuacao} de ${questions.length}</span>`;
+        scoreText.innerHTML = msg;
     }  
 
     fetch("/usuarios/cadastrarPontuacao", {
@@ -174,7 +176,8 @@ function showResult(){
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.j
             pontuacaoServer: pontuacao,
-            categoriaServer: categoria
+            categoriaServer: categoria,
+            usuarioServer: sessionStorage.ID_USUARIO
         })
     }).then(function (resposta) {
 
@@ -183,16 +186,16 @@ function showResult(){
         if (resposta.ok) {
             Swal.fire({
 
-                imageUrl: '',
+                imageUrl: 'assets/imgHome/logo_pequena.png',
                 imageWidth: 3000,
-                title: 'Quiz finalizado',
-                background: '#000',
-                confirmButtonText: 'DATTEBAYO!',
-                color: '#FFF',
+                title: 'Parabéns! Quiz finalizado.',
+                background: '#fff',
+                confirmButtonText: 'Ver resultado!',
+                color: '#3B2F57',
                 html: msg,
             }).then((result) => {
                 setTimeout(function () {
-                    window.location = "dashboard.html";
+                    window.location = "contaConfig.html";
                 }, 1000);
             })
         } else {

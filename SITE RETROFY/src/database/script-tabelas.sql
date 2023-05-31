@@ -45,7 +45,6 @@ create table medida (
 	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
 );
 
-
 /*
 comando para sql server - banco remoto - ambiente de produção
 */

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/contaConfig.css">
-    <link rel="shortcut icon" href="./assets/imgHome/logo discofone sozinho .svg">
+    <link rel="shortcut icon" href="../assets/imgHome/logo discofone sozinho .svg">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Retrofy</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -89,14 +89,14 @@
                 <h2 class="nome-tabela">Histórico de tentativas</h2>
             </div>
             <div class="historico">
-                <table id="infos">
+                <table>
                     <thead>
                         <tr class="titulo-tabela">
-                            <td>Quiz</td>
                             <td>Pontuação</td>
+                            <td>Quiz</td>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="infos">
                     </tbody>
                 </table>
             </div>
@@ -118,10 +118,10 @@
     })
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     email.innerHTML = sessionStorage.EMAIL_USUARIO;
-
-    function updatePontos() {
+    updatePontos(sessionStorage.ID_USUARIO)
+    function updatePontos(usuario) {
         //aguardar();
-        fetch("/usuarios/listarPontuacao").then(function (resposta) {
+        fetch(`/usuarios/listarPontuacao/${usuario}`).then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                     throw "Nenhum resultado encontrado!!";

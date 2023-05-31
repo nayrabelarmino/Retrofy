@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Pop</title>
   <link rel="stylesheet" href="../css/quizzes.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="../assets/imgHome/logo discofone sozinho .svg">
+  <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  <script src="../app.js"></script>
 </head>
 
 <body>
@@ -68,51 +73,8 @@
       </div>
   </div>
 
-  <!-- Inside this JavaScript file I've inserted Questions and Options only -->
   <script src="questoesPop.js"></script>
 
-  <!-- Inside this JavaScript file I've coded all Quiz Codes -->
   <script src="quiz_pop.js"></script>
 </body>
 </html>
-
-<!-- <script>
-    fetch("/usuarios/cadastrarPontuacao", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/usuario.j
-                    pontuacaoServer: pontuacao,
-                    categoriaServer: categoria,
-                })
-            }).then(function (resposta) {
-
-                console.log("resposta: ", resposta);
-
-                if (resposta.ok) {
-                    Swal.fire({
-
-                        imageUrl: 'assets/imgs/gif-personalidade.gif',
-                        imageWidth: 3000,
-                        title: 'Quiz finalizado',
-                        background: '#000',
-                        confirmButtonText: 'DATTEBAYO!',
-                        color: '#FFF',
-                        html: msg,
-                    }).then((result) => {
-                        setTimeout(function () {
-                            window.location = "/public/contaConfig.html";
-                        }, 1000);
-                    })
-                } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-                }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-            });
-
-            return false;
-</script> -->

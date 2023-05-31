@@ -269,6 +269,10 @@ table thead tr td, table tbody tr td {
     font-size: 17px;
 }
 
+table tbody tr td {
+    width: 50%;
+}
+
 .nome-tabela {
     border: none !important; 
     width: 100%;
