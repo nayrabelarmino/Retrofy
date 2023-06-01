@@ -19,7 +19,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idAquario) {
+function buscarDados() {
 
     instrucaoSql = ''
 
@@ -33,13 +33,8 @@ function buscarMedidasEmTempoReal(idAquario) {
                     order by id desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
-                        fk_aquario 
-                        from medida where fk_aquario = ${idAquario} 
-                    order by id desc limit 1`;
+        instrucaoSql = `SELECT distinct COUNT(categoria) as contagem, categoria FROM pontuacao 
+        JOIN usuario ON fkUsuario = idUsuario group by categoria;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -49,8 +44,20 @@ function buscarMedidasEmTempoReal(idAquario) {
     return database.executar(instrucaoSql);
 }
 
+function buscarPontuacao() {
+
+    instrucaoSql = ''
+
+        instrucaoSql = `SELECT pontuacao as acertos, (10 - pontuacao) as erros FROM pontuacao JOIN usuario ON fkUsuario = idUsuario 
+        WHERE idUsuario = 1 ORDER BY idPontuacao DESC;`;
+
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarDados,
+    buscarPontuacao
 }

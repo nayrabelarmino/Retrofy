@@ -101,9 +101,9 @@ ul li.item-menu a{
     justify-content: center;
     align-items: center;
     margin-top: 90px;
-    margin-left: 180px;
+    margin-left: 150px;
     width: 840px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #container-graficos {
@@ -121,8 +121,8 @@ h3 {
     border-radius: 20px;
     padding: 20px;
     padding-bottom: 35px;
-    margin-left: 180px;
-    height: 358px;
+    margin-left: 150px;
+    height: 360px;
     width: 460px;
 }
 
@@ -137,7 +137,7 @@ h3 {
     border-radius: 20px;
     padding: 20px;
     width: 20rem;
-    height: 55vh;
+    height: 360px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -155,12 +155,20 @@ h3 {
     width: 100px;
 }
 
-.grafico-3 {
+.indicador-1 {
     border: 1px solid #5A008D;
+    padding: 15px;
     border-radius: 20px;
-    padding: 20px;
-    width: 20rem;
-    height: 55vh;
-    text-align: center;
-    align-items: center;
+    margin-bottom: 12px;
+    height: 112px;
+    font-size: 15px;
+    width: 280px;
+}
+
+.div_indicadores h3 {
+    font-size: 15px;
+}
+
+.div_indicadores p {
+    font-size: 14px;
 }

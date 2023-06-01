@@ -10,9 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Hora do Quiz! - Retrofy</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- <script src="./js/dashboard.js"></script> -->
 </head>
 
-<body>
+<body onload="obterDados()">
     <div>
         <nav class="menu-lateral">
             <div class="botao_expandir">
@@ -71,11 +72,125 @@
             <h3 class="titulo-grafico">Seus acertos e erros (%)</h3>
             <canvas id="grafico2"></canvas>
         </div>
+        <div class="div_indicadores">
+            <div class="indicador-1">
+                <h3>Média do Quiz - Pop</h3>
+                <p>Lorem Ipsum is simply dummy text of the. <br>
+                    5,6</p><br>
+            </div>
+            <div class="indicador-1">
+                <h3>Média do Quiz - Rock</h3>
+                <p>Lorem Ipsum is simply dummy text of the. <br>
+                    5,6</p><br>
+            </div>
+            <div class="indicador-1">
+                <h3>Média do Quiz - Post Punk</h3>
+                <p>Lorem Ipsum is simply dummy text of the. <br>
+                    5,6</p>
+            </div>
+        </div>
     </div>
 </body>
 
 </html>
 <script>
+    var btnExpandir = document.querySelector('#botao-expandir')
+    var menuSide = document.querySelector('.menu-lateral')
 
+    btnExpandir.addEventListener('click', function () {
+        menuSide.classList.toggle('expandir')
+    })
+
+
+    var labels = []
+    var dados = []
+    function obterDados() {
+        fetch(`/medidas/dados/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    for (var i = 0; i < resposta.length; i++) {
+                        console.log(resposta[i]);
+                        var dado = resposta[i];
+                        labels.push(dado.categoria)
+                        dados.push(dado.contagem);
+                    };
+
+                    const data = {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Quantidade de jogadas',
+                            backgroundColor: ['#F887C9', '#BF6BB6', '#85529F', '#4B3B83', '#002563', '#0000FF'],
+                            data: dados
+                        }]
+                    };
+
+                    const config = {
+                        type: 'bar',
+                        data: data,
+                        options: {
+                            animation: { duration: 900 },
+                            hoverMode: 'index',
+                            stacked: false,
+                        }
+                    };
+
+                    const myChart = new Chart(
+                        document.getElementById('grafico1'),
+                        config);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+
+    var labels2 = []
+    var dados2 = []
+
+        fetch(`/medidas/pontuacao/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    for (var i = 0; i < resposta.length; i++) {
+                        console.log(resposta[i]);
+                        var dado2 = resposta[i];
+                        labels2.push(dado2.acertos)
+                        dados2.push(dado2.erros);
+                    };
+
+                    const data2 = {
+                        labels: labels2,
+                        datasets: [{
+                            label: 'Quantidade',
+                            backgroundColor: ['#F887C9', '#BF6BB6', '#85529F', '#4B3B83', '#002563', '#0000FF'],
+                            data: dados2
+                        }]
+                    };
+
+                    const config2 = {
+                        type: 'doughnut',
+                        data: dados2,
+                        options: {
+                            animation: { duration: 900 },
+                            hoverMode: 'index',
+                            stacked: false,
+                        },
+                    };
+
+                    const myChart2 = new Chart(
+                        document.getElementById('grafico2'),
+                        config2);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
 </script>
-<script src="/public/js/dashboard.js"></script>

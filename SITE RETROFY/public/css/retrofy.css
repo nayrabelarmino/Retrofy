@@ -329,8 +329,7 @@ h1{
     margin-left: 8%;
     margin-right: 9%;
     margin-top: 5%;
-    text-align: left;
-
+    text-align: justify;
 }
 
 h4 {
@@ -350,7 +349,6 @@ h4 {
     width: 30%;
     padding: 20px;
     margin-right: 20px;
-    cursor: pointer;
 }
 .cards:hover{
     box-shadow: 0 8px 50px #23232333;
@@ -434,7 +432,7 @@ h3 {
 }
 
 p{
-text-align: justify;
+    text-align: justify;
 }
 
 footer {
