@@ -150,11 +150,6 @@ h3 {
     margin-top: 10px;
 }
 
-#grafico2 {
-    height: 200px;
-    width: 100px;
-}
-
 .indicador-1 {
     border: 1px solid #5A008D;
     padding: 15px;
@@ -162,7 +157,7 @@ h3 {
     margin-bottom: 12px;
     height: 112px;
     font-size: 15px;
-    width: 280px;
+    width: 320px;
 }
 
 .div_indicadores h3 {
@@ -170,5 +165,24 @@ h3 {
 }
 
 .div_indicadores p {
+    margin-top: 10px;
     font-size: 14px;
+}
+
+#media0 {
+    margin-top: 15px;
+}
+
+#media1 {
+    margin-top: 5px;
+}
+
+#media2 {
+    margin-top: 5px;
+}
+
+.media-txt {
+    color: #5A008D;
+    font-weight: 900;
+    font-size: 15px;
 }

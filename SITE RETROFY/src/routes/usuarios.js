@@ -20,7 +20,7 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
-router.get("/listarPontuacao/:usuario", function (req, res) {
+router.get("/listarPontuacao/:idUsuario", function (req, res) {
     usuarioController.listarPontuacao(req, res);
 });
 

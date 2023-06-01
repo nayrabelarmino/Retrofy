@@ -69,30 +69,30 @@
             <canvas id="grafico1"></canvas>
         </div>
         <div class="grafico-2">
-            <h3 class="titulo-grafico">Seus acertos e erros (%)</h3>
-            <canvas id="grafico2"></canvas>
+            <h3 class="titulo-grafico">Seus acertos e erros</h3>
+            <canvas style="height: 220px;" id="grafico2"></canvas>
         </div>
         <div class="div_indicadores">
             <div class="indicador-1">
                 <h3>Média do Quiz - Pop</h3>
-                <p>Lorem Ipsum is simply dummy text of the. <br>
-                    5,6</p><br>
+                <p id="mediaGeral0"></p>
+                <p id="media0"></p>
             </div>
             <div class="indicador-1">
                 <h3>Média do Quiz - Rock</h3>
-                <p>Lorem Ipsum is simply dummy text of the. <br>
-                    5,6</p><br>
+                <p id="mediaGeral1"></p>
+                <p id="media1"></p>
             </div>
             <div class="indicador-1">
                 <h3>Média do Quiz - Post Punk</h3>
-                <p>Lorem Ipsum is simply dummy text of the. <br>
-                    5,6</p>
+                <p id="mediaGeral2"></p>
+                <p id="media2"></p>
             </div>
         </div>
     </div>
 </body>
-
 </html>
+
 <script>
     var btnExpandir = document.querySelector('#botao-expandir')
     var menuSide = document.querySelector('.menu-lateral')
@@ -105,6 +105,30 @@
     var labels = []
     var dados = []
     function obterDados() {
+        fetch(`/medidas/mediaGeral`).then(function (response){
+            if(response.ok) {
+                response.json().then(function (dadosMediaGeral){
+                    dadosMediaGeral.forEach((dado, i) => {
+                        media = dado.Media
+                        document.getElementById(`mediaGeral${i}`).innerHTML = `Média geral de acertos dos usuários: ${dado.Media}`
+                    })
+                }) 
+            }
+        })
+
+        fetch(`/medidas/media/${sessionStorage.ID_USUARIO}`).then(function (response){
+            if(response.ok) {
+                response.json().then(function (dadosMedia){
+                    console.log(dadosMedia); 
+
+                    dadosMedia.forEach((dado, i) => {
+                        media = dado.Media
+                        document.getElementById(`media${i}`).innerHTML = `<span class="media-txt">Sua média:</span> ${dado.Media}`
+                    })
+                }) 
+            }
+        })
+
         fetch(`/medidas/dados/`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
@@ -148,32 +172,33 @@
             });
 
 
-    var labels2 = []
+    var labels2 = ['Acertos', 'Erros']
     var dados2 = []
 
-        fetch(`/medidas/pontuacao/`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/medidas/pontuacao/${sessionStorage.ID_USUARIO}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    console.log(`Dados recebidos: ${(resposta)}`);
                     for (var i = 0; i < resposta.length; i++) {
                         console.log(resposta[i]);
                         var dado2 = resposta[i];
-                        labels2.push(dado2.acertos)
+                        // labels2.push(dado2.acertos)
+                        dados2.push(dado2.acertos);
                         dados2.push(dado2.erros);
                     };
 
                     const data2 = {
-                        labels: labels2,
+                        labels: [labels2[0], labels2[1]],
                         datasets: [{
                             label: 'Quantidade',
                             backgroundColor: ['#F887C9', '#BF6BB6', '#85529F', '#4B3B83', '#002563', '#0000FF'],
-                            data: dados2
+                            data: [dados2[0], dados2[1]]
                         }]
                     };
 
                     const config2 = {
                         type: 'doughnut',
-                        data: dados2,
+                        data: data2,
                         options: {
                             animation: { duration: 900 },
                             hoverMode: 'index',

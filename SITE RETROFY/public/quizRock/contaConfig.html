@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/contaConfig.css">
     <link rel="shortcut icon" href="../assets/imgHome/logo discofone sozinho .svg">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Retrofy</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
-<body scroll="si" style="overflow: hidden" onload="updatePontos(), validarSessao()"></body>
+<body scroll="si" style="overflow: hidden">
     <div id="modais"></div>
     <div>
         <nav class="menu-lateral">
@@ -94,7 +95,6 @@
                         <tr class="titulo-tabela">
                             <td>Pontuação</td>
                             <td>Quiz</td>
-                            <td>Percentual</td>
                         </tr>
                     </thead>
                     <tbody id="infos">
@@ -156,15 +156,12 @@
                         tableTr.appendChild(tdcategoria);
                         table.appendChild(tableTr);
                     }
-
-                    // finalizarAguardar();
                 });
             } else {
                 swal("Ops", "Houve um erro na API!", "warning");
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            // finalizarAguardar();
         });
     }
 

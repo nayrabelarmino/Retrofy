@@ -98,7 +98,11 @@ function cadastrar(req, res) {
             );
     }
     function listarPontuacao(req, res) {
-        var usuario = req.params.usuario
+        var usuario = req.params.idUsuario
+        if(usuario == 'undefined') {
+            res.status(204).send("Seu usuario está undefined");
+            return
+        }
         usuarioModel.listarPontuacao(usuario)
             .then(function (resultado) {
                 if (resultado.length > 0) {

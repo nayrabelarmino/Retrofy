@@ -215,3 +215,7 @@ p {
 .retrofy {
     margin-left: 180px;
 }
+
+canvas {
+    max-width: 250px;
+}

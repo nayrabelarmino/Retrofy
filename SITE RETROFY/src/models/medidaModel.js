@@ -1,19 +1,9 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idAquario, limite_linhas) {
+function playlistFav() {
 
-    instrucaoSql = ''
-
-    if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `SELECT COUNT(usuario.fkPlaylist) as voto, playlist.nome AS nome_playlist 
-        FROM usuario JOIN playlist ON  playlist.idPlaylist = usuario.fkPlaylist group by usuario.fkPlaylist;`;
-    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `SELECT COUNT(usuario.fkPlaylist) as voto, playlist.nome AS nome_playlist 
-        FROM usuario JOIN playlist ON  playlist.idPlaylist = usuario.fkPlaylist group by usuario.fkPlaylist;`;
-    } else {
-        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
-        return
-    }
+    instrucaoSql = "SELECT COUNT(usuario.fkPlaylist) as voto, playlist.nome AS nome_playlist FROM usuario JOIN playlist ON  playlist.idPlaylist = usuario.fkPlaylist group by usuario.fkPlaylist;"
+    
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -44,12 +34,35 @@ function buscarDados() {
     return database.executar(instrucaoSql);
 }
 
-function buscarPontuacao() {
+function buscarPontuacao(idUsuario) {
 
     instrucaoSql = ''
 
         instrucaoSql = `SELECT pontuacao as acertos, (10 - pontuacao) as erros FROM pontuacao JOIN usuario ON fkUsuario = idUsuario 
-        WHERE idUsuario = 1 ORDER BY idPontuacao DESC;`;
+        WHERE idUsuario = ${idUsuario} ORDER BY idPontuacao DESC;`;
+
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function buscarMediaGeral() {
+
+    instrucaoSql = ''
+
+        instrucaoSql = `SELECT categoria as Quiz, round(avg(pontuacao),1) as Media FROM 
+        pontuacao JOIN usuario ON fkUsuario = idUsuario group by categoria;`;
+
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+function buscarMedia(idUsuario) {
+
+    instrucaoSql = ''
+
+        instrucaoSql = `SELECT categoria as Quiz, round(avg(pontuacao),1) as Media FROM pontuacao 
+        JOIN usuario ON fkUsuario = idUsuario  where idUsuario = ${idUsuario} group by categoria;`;
 
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -57,7 +70,9 @@ function buscarPontuacao() {
 }
 
 module.exports = {
-    buscarUltimasMedidas,
+    playlistFav,
     buscarDados,
-    buscarPontuacao
+    buscarPontuacao,
+    buscarMediaGeral,
+    buscarMedia
 }

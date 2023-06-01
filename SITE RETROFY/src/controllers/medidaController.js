@@ -1,14 +1,8 @@
 var medidaModel = require("../models/medidaModel");
 
-function buscarUltimasMedidas(req, res) {
+function playlistFav(req, res) {
 
-    const limite_linhas = 7;
-
-    var idAquario = req.params.idAquario;
-
-    console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
-
-    medidaModel.buscarUltimasMedidas(idAquario, limite_linhas).then(function (resultado) {
+    medidaModel.playlistFav().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -43,7 +37,46 @@ function buscarPontuacao(req, res) {
 
     console.log(`Recuperando medidas em tempo real`);
 
-    medidaModel.buscarPontuacao().then(function (resultado) {
+    var idUsuario = req.params.idUsuario
+    if(idUsuario == 'undefined') {
+        res.status(204).send ('Seu id está undefined')
+        return
+    }
+    medidaModel.buscarPontuacao(idUsuario).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function buscarMediaGeral(req, res) {
+
+    console.log(`Recuperando medidas em tempo real`);
+
+    medidaModel.buscarMediaGeral().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+function buscarMedia(req, res) {
+
+    console.log(`Recuperando medidas em tempo real`);
+    var idUsuario = req.params.idUsuario
+
+    medidaModel.buscarMedia(idUsuario).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -58,7 +91,9 @@ function buscarPontuacao(req, res) {
 
 
 module.exports = {
-    buscarUltimasMedidas,
+    playlistFav,
     buscarDados,
-    buscarPontuacao
+    buscarPontuacao,
+    buscarMediaGeral,
+    buscarMedia
 }
