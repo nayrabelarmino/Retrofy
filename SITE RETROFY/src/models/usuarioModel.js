@@ -32,8 +32,7 @@ function cadastrar(nome, email, senha, fkPlaylist) {
 } 
 
 function cadastrarPontuacao(pontuacao, categoria, fkUsuario) {
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.  +9*
+
     var instrucao = `
     INSERT INTO pontuacao (idPontuacao, pontuacao, categoria, fkUsuario) VALUES (null, ${pontuacao}, '${categoria}', ${fkUsuario});
     `;
