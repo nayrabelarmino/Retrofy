@@ -72,4 +72,6 @@ where categoria = 'Rock';
 SELECT AVG(pontuacao) from pontuacao 
 where categoria = 'Post Punk';
 
-SELECT categoria as Quiz, avg(pontuacao) as Média FROM pontuacao JOIN usuario ON fkUsuario = idUsuario group by categoria;
+SELECT categoria as Quiz, round(avg(pontuacao),1) as Média FROM pontuacao JOIN usuario ON fkUsuario = idUsuario group by categoria;
+
+SELECT categoria as Quiz, round(avg(pontuacao),1) as Média FROM pontuacao JOIN usuario ON fkUsuario = idUsuario  where idUsuario = 6 group by categoria;

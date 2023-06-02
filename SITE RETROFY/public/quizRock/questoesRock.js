@@ -99,7 +99,7 @@ let questions = [
   },
   {
     numb: 10,
-    question: "Qual música percente a cantora Celly Campelo?",
+    question: "Qual música pertence a cantora Celly Campelo?",
     answer: "Estúpido cupido",
     options: [
       "Sozinho",

@@ -191,12 +191,12 @@
                     imageWidth: 3000,
                     title: 'Parabéns! Quiz finalizado.',
                     background: '#fff',
-                    confirmButtonText: 'Ver resultado!',
-                    color: '#3B2F57',
+                    confirmButtonText: 'Ver análise!',
+                    color: '#5A008D',
                     html: msg,
                 }).then((result) => {
                     setTimeout(function () {
-                        window.location = "../quizRock/contaConfig.html";
+                        window.location = "../dashboard.html";
                     }, 1000);
                 })
             } else {
