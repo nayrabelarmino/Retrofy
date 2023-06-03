@@ -187,7 +187,6 @@ h1{
 .img_artistas {
     align-items: center;
     text-align: center;
-    margin-bottom: px;
 }
 
 .imgs_cantores {
@@ -213,84 +212,6 @@ h1{
 
 .titulo_principal {
     font-size: 40px;
-}
-
-
-.slider {
-  --slide-width: 250px;
-  height: fit-content;
-  margin: 80px auto;
-
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-
-}
-
-
-.slider::before,
-.slider::after {
-  content: "";
-  height: 100%;
-  position: absolute;
-  width: 200px;
-  z-index: 2;
-}
-
-.slider::after {
-  right: 0;
-  top: 0;
-  transform: rotateZ(180deg);
-}
-
-.slider::before {
-  left: 0;
-  top: 0;
-}
-
-.slider .slide-track {
-  animation: scroll 40s linear infinite;
-  display: flex;
-  width: calc(var(--slide-width) * 14);
-}
-
-.slider .slide {
-  height: fit-content;
-  width: var(--slide-width);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc((var(--slide-width) * -1) * 7));
-  }
-}
-
-.slide img {
-  width: 80%;
-  aspect-ratio: 1;
-}
-
-.slide span {
-  color: #e1e1e1;
-  font-family: 'Montserrat';
-  align-self: flex-start;
-}
-
-.slide > .nome-musica {
-  font-weight: bold;
-  color: #3B2F57;
-}
-
-.slide > .artista {
-  font-weight: thin;
-  color: #3B2F57;
 }
 
 #desenvolvedora{
@@ -358,8 +279,7 @@ h4 {
 }
 .cards:hover{
     box-shadow: 0 8px 50px #23232333;
-    transform: translateY(-10px);
-    transition: 500ms;
+
 }
 
 
@@ -471,4 +391,49 @@ hr {
 .social:hover {
     -webkit-transform: scale(1);
     transform: scale(1.2);
+}
+
+#propaganda {
+    margin-top: 120px;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    display: flex;
+    width: 70%;
+    margin-left: 200px;
+    margin-bottom: 110px;
+}
+
+.div-propaganda {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.cadastre_se {
+    background-color: #b68acf;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cadastre_se:hover {
+    background-color: #3B2F57;
+}
+
+.div-container {
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    background-color: #c3acd09a;
+}
+
+.imagem-cadastro {
+    display: flex;
+
 }

@@ -107,75 +107,28 @@ h2.titulo-inicial {
 }
 
 .container-principal {
-    background-color: #dcb9ffaf;
-    height: 300px;
-    border-radius: 30px; 
-    padding: 45px;
-    justify-content: center;
-    width: 90%;
-    gap: 1vw;
-    margin-left: 40px;
-}
-
-.container-playlist {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 1vh;
-}
-
-.barra {
-    border-right: 2px solid #9a76ad;
-    height: 130px;
-}
-
-.container-genero {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    width: 50%; 
-    gap: 1vh;
-}
-
-.txt-div {
-    display: flex;
-    flex-direction: column;
-    gap: 3vh;
-}
-
-.botao-playlist {
-    width: 20vh;
-    height: 35px;
-    font-size: 10px;
-    border: none;
-    border-radius: 25px;
-    text-transform: uppercase;
-    color: #ffffff;
-    font-weight: bold;
-    background-color: #3B2F57;
-    cursor: pointer;
-    font-family: "Montserrat";
-    align-self: center;
-    display: flex;
     padding: 20px;
-    align-items: center;
     justify-content: center;
-    margin-left: 150px;
-    margin-top: 25px;
+    align-items: center;
+    background-color: #bd90d673;
+    height: 300px;
+    width: 520px;
+    border-radius: 20px;
+    margin-left: 30px;
+
 }
 
-.botao-playlist:hover {
-    background-color: #9571a8;
+.container-principal p {
+    color: #5A008D;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-select {
-    margin-top: 20px;
-    border-radius: 10px;
-    padding: 6px;
-    border: none;
-    width: 180px;
-    color: #965cb6;
-}   
+.spotify-perfil {
+    border-radius: 20px;
+    margin-left: -5px;
+}
 
 p {
     color: #3B2F57
@@ -193,11 +146,12 @@ p {
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: 100vh;
+    height: 95vh;
     padding: 3rem;
     justify-content: center;
     align-items: center;
     gap: 5vh;
+    margin-top: 30px;
 }
 
 .filha2 {
@@ -209,13 +163,88 @@ p {
     width: 30%;
     height: 90vh;
     margin-left: 50px;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
-.retrofy {
-    margin-left: 180px;
-}
 
 canvas {
     max-width: 250px;
+}
+
+.playlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    background-color: #bd90d673;
+    height: 400px;
+    width: 320px;
+    border-radius: 20px;
+}
+
+h2 {
+    color: #5A008D;
+    margin-bottom: 3px;
+}
+
+.div-principal {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;    
+    margin-left: 140px;
+}
+
+.h2-sessao2 {
+    color: #5A008D;
+    margin-bottom: 30px;
+    margin-left: 180px; 
+}
+
+#pop {
+    width: 100%;
+    height: 100%;
+}
+
+#rock {
+    width: 100%;
+    height: 100%;
+}
+
+#postpunk {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    height: 100px;
+    gap: 6vw;
+    background-color: #DCB9FF;
+}
+
+hr {
+    width: 70rem;
+    border: 1px solid #3B2F57;
+}
+
+.redes {
+    display: flex;
+    gap: 1vw;
+    cursor: pointer;
+}
+
+.social {
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.social:hover {
+    -webkit-transform: scale(1);
+    transform: scale(1.2);
 }

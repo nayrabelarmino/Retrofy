@@ -14,6 +14,7 @@
 </head>
 
 <body onload="obterDados()">
+    <div id="modais"></div>
     <div>
         <nav class="menu-lateral">
             <div class="botao_expandir">
@@ -30,12 +31,6 @@
                     <a href="quiz.html">
                         <span class="icon"><i class="bi bi-journal-check"></i></span>
                         <span class="txt-link">Quiz</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="biblioteca.html">
-                        <span class="icon"><i class="bi bi-heart"></i></span>
-                        <span class="txt-link">Biblioteca</span>
                     </a>
                 </li>
                 <li class="item-menu ativo">
@@ -90,10 +85,38 @@
             </div>
         </div>
     </div>
+    <div class="div-pontuacao">
+        <button class="buttonPontuacao" onclick="modal_score()">Ver pontuação máxima</button>
+    </div>
 </body>
 </html>
 
 <script>
+    function fechar_modal() {
+    modais.innerHTML = "  ";
+    }
+
+    function modal_score() {
+        modais.innerHTML = `<div class="modal">
+    <div class="fundo_modal">
+        <div class="conteudo_modal"> 
+            <div class="texto">
+                <div class="fechar">
+                    <button onclick="fechar_modal()" class="botao_fechar">X</button>
+                </div>
+                <h1 class="score-pontuacao">Suas pontuações Records 🏆</h1>
+                <p>Quiz Pop - </p>
+                <p>Quiz Rock - </p>
+                <p> Quiz Post Punk - </p>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>`
+    }
+
+
+
     var btnExpandir = document.querySelector('#botao-expandir')
     var menuSide = document.querySelector('.menu-lateral')
 
