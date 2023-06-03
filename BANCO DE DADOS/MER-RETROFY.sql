@@ -26,6 +26,13 @@ idPlaylist int primary key auto_increment,
 nome varchar(50)
 );
 
+CREATE TABLE dadosAdicionais (
+idDados int,
+artistaFav varchar(20),
+fkUsuario int,
+constraint fkUsuario_dados foreign key (fkUsuario) references usuario (idUsuario),
+constraint pkComposta primary key (idDados, fkUsuario));
+
 INSERT INTO playlist VALUES 
 	(null, 'Pop - 1960'),
     (null, 'Pop - 1970'),
@@ -63,15 +70,9 @@ SELECT pontuacao as acertos, (10 - pontuacao) as erros FROM pontuacao JOIN usuar
 WHERE idUsuario = 1 ORDER BY idPontuacao DESC;
 
 -- Select para a média de acertos de cada Quiz
-SELECT AVG(pontuacao) from pontuacao 
-where categoria = 'Pop';
-
-SELECT AVG(pontuacao) from pontuacao 
-where categoria = 'Rock';
-
-SELECT AVG(pontuacao) from pontuacao 
-where categoria = 'Post Punk';
-
 SELECT categoria as Quiz, round(avg(pontuacao),1) as Média FROM pontuacao JOIN usuario ON fkUsuario = idUsuario group by categoria;
 
 SELECT categoria as Quiz, round(avg(pontuacao),1) as Média FROM pontuacao JOIN usuario ON fkUsuario = idUsuario  where idUsuario = 6 group by categoria;
+
+-- SELECTS PONTUACAO RECORD USUARIO
+SELECT categoria as Quiz, MAX(pontuacao) as 'Pontuação Record' FROM pontuacao JOIN usuario ON fkUsuario = idUsuario  where idUsuario = 1 group by categoria;
