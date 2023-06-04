@@ -86,7 +86,7 @@
         </div>
     </div>
     <div class="div-pontuacao">
-        <button class="buttonPontuacao" onclick="modal_score()">Ver pontuação máxima</button>
+        <button class="buttonPontuacao" onclick="modal_score()">Meu record</button>
     </div>
 </body>
 
@@ -154,15 +154,33 @@
             }
         })
 
-        fetch(`/medidas/media/${sessionStorage.ID_USUARIO}`).then(function (response) {
+        fetch(`/medidas/media/${sessionStorage.ID_USUARIO}/Pop`).then(function (response) {
             if (response.ok) {
                 response.json().then(function (dadosMedia) {
                     console.log(dadosMedia);
 
-                    dadosMedia.forEach((dado, i) => {
-                        media = dado.Media
-                        document.getElementById(`media${i}`).innerHTML = `<span class="media-txt">Sua média:</span> ${dado.Media}`
-                    })
+                    media0.innerHTML = `<span>Sua média: ${dadosMedia[0].Media==null ? 0: dadosMedia[0].Media}</span>`
+                })
+            }
+        })
+
+        fetch(`/medidas/media/${sessionStorage.ID_USUARIO}/Rock`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (dadosMedia) {
+                    console.log(dadosMedia);
+
+                    media1.innerHTML = `<span>Sua média: ${dadosMedia[0].Media==null ? 0: dadosMedia[0].Media}</span>`
+                })
+            }
+        })
+        
+        
+        fetch(`/medidas/media/${sessionStorage.ID_USUARIO}/Post Punk`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (dadosMedia) {
+                    console.log(dadosMedia);
+
+                    media2.innerHTML = `<span>Sua média: ${dadosMedia[0].Media==null ? 0: dadosMedia[0].Media}</span>`
                 })
             }
         })

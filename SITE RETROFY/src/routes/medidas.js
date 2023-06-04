@@ -19,7 +19,7 @@ router.get("/mediaGeral", function (req, res) {
     medidaController.buscarMediaGeral(req, res);
 });
 
-router.get("/media/:idUsuario", function (req, res) {
+router.get("/media/:idUsuario/:categoria", function (req, res) {
     medidaController.buscarMedia(req, res);
 });
 

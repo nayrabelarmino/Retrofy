@@ -57,12 +57,12 @@ function buscarMediaGeral() {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-function buscarMedia(idUsuario) {
+function buscarMedia(idUsuario, categoria) {
 
     instrucaoSql = ''
 
         instrucaoSql = `SELECT categoria as Quiz, round(avg(pontuacao),1) as Media FROM pontuacao 
-        JOIN usuario ON fkUsuario = idUsuario  where idUsuario = ${idUsuario} group by categoria;`;
+        JOIN usuario ON fkUsuario = idUsuario  where idUsuario = ${idUsuario} and categoria = '${categoria}';`;
 
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

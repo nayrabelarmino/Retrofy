@@ -198,25 +198,26 @@ h3 {
 
 .div-pontuacao {
     display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left: 11%;
     margin-top: 15px;
 }
 
 .buttonPontuacao {
     padding: 10px;
-    width: 180px;
+    width: 140px;
+    font-weight: 700;
     border-radius: 20px;
     border: none;
-    background-color: #9b67b9;
+    background-color: #85529F;
     font-family: 'Montserrat';
     color: white;
     cursor: pointer;
 }
 
 .buttonPontuacao:hover {
-    background-color: #85529F;
+    background-color: #BF6BB6;
     transition: .5s;
 }
 
@@ -239,7 +240,7 @@ h3 {
 .fundo_modal{
     margin-top: 10px;
     background-color: #ffffff;
-    width: 35%;
+    width: 25%;
     height: 45%;
     border-radius: 25px;
     z-index: 10000;
@@ -251,7 +252,7 @@ h3 {
     display: flex;
     justify-content: end;
     margin-top: -40px;
-    margin-left: 75px;
+    margin-left: 40px;
 }
 
 .botao_fechar{

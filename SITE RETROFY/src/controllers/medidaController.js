@@ -75,8 +75,9 @@ function buscarMedia(req, res) {
 
     console.log(`Recuperando medidas em tempo real`);
     var idUsuario = req.params.idUsuario
+    var categoria = req.params.categoria
 
-    medidaModel.buscarMedia(idUsuario).then(function (resultado) {
+    medidaModel.buscarMedia(idUsuario, categoria).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
