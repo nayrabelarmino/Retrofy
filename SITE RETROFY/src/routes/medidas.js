@@ -23,4 +23,8 @@ router.get("/media/:idUsuario", function (req, res) {
     medidaController.buscarMedia(req, res);
 });
 
+router.get("/score/:idUsuario", function (req, res) {
+    medidaController.scoreQuiz(req, res);
+});
+
 module.exports = router;

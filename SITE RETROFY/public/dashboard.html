@@ -89,30 +89,47 @@
         <button class="buttonPontuacao" onclick="modal_score()">Ver pontuação máxima</button>
     </div>
 </body>
+
 </html>
 
 <script>
     function fechar_modal() {
-    modais.innerHTML = "  ";
+        modais.innerHTML = "  ";
     }
 
     function modal_score() {
-        modais.innerHTML = `<div class="modal">
-    <div class="fundo_modal">
-        <div class="conteudo_modal"> 
-            <div class="texto">
-                <div class="fechar">
-                    <button onclick="fechar_modal()" class="botao_fechar">X</button>
+
+        fetch(`/medidas/score/${sessionStorage.ID_USUARIO}`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (scoreQuiz) {
+                    console.log(scoreQuiz);
+
+                    var ps = ''
+                    for (var i = 0; i <= 2; i++) {
+                        if (scoreQuiz[i] == undefined) {
+                            ps += `<p>Não jogou ainda.</p>`
+                        } else {
+                            ps += `<p>Quiz ${scoreQuiz[i].Quiz} - ${scoreQuiz[i].PontuacaoRecord}pts.</p>`
+                        }
+                    }
+
+                    modais.innerHTML = `<div class="modal">
+                    <div class="fundo_modal">
+                        <div class="conteudo_modal"> 
+                            <div class="texto">
+                              <div class="fechar">
+                            <button onclick="fechar_modal()" class="botao_fechar">X</button>
+                            </div>
+                            <h1 class="score-pontuacao">Suas pontuações Records 🏆</h1>
+                            ${ps}
+                        </div>
+                    </div>
                 </div>
-                <h1 class="score-pontuacao">Suas pontuações Records 🏆</h1>
-                <p>Quiz Pop - </p>
-                <p>Quiz Rock - </p>
-                <p> Quiz Post Punk - </p>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>`
+            </div>`
+                })
+            }
+        })
+
     }
 
     var btnExpandir = document.querySelector('#botao-expandir')
@@ -126,27 +143,27 @@
     var labels = []
     var dados = []
     function obterDados() {
-        fetch(`/medidas/mediaGeral`).then(function (response){
-            if(response.ok) {
-                response.json().then(function (dadosMediaGeral){
+        fetch(`/medidas/mediaGeral`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (dadosMediaGeral) {
                     dadosMediaGeral.forEach((dado, i) => {
                         media = dado.Media
                         document.getElementById(`mediaGeral${i}`).innerHTML = `Média geral de acertos dos usuários: ${dado.Media}`
                     })
-                }) 
+                })
             }
         })
 
-        fetch(`/medidas/media/${sessionStorage.ID_USUARIO}`).then(function (response){
-            if(response.ok) {
-                response.json().then(function (dadosMedia){
-                    console.log(dadosMedia); 
+        fetch(`/medidas/media/${sessionStorage.ID_USUARIO}`).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (dadosMedia) {
+                    console.log(dadosMedia);
 
                     dadosMedia.forEach((dado, i) => {
                         media = dado.Media
                         document.getElementById(`media${i}`).innerHTML = `<span class="media-txt">Sua média:</span> ${dado.Media}`
                     })
-                }) 
+                })
             }
         })
 
@@ -193,8 +210,8 @@
             });
 
 
-    var labels2 = ['Acertos', 'Erros']
-    var dados2 = []
+        var labels2 = ['Acertos', 'Erros']
+        var dados2 = []
 
         fetch(`/medidas/pontuacao/${sessionStorage.ID_USUARIO}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {

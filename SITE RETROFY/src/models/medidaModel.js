@@ -69,10 +69,24 @@ function buscarMedia(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function scoreQuiz(idUsuario) {
+
+    instrucaoSql = ''
+
+        instrucaoSql = `SELECT categoria as Quiz, MAX(pontuacao) as 'PontuacaoRecord' FROM pontuacao JOIN 
+        usuario ON fkUsuario = idUsuario  where idUsuario = ${idUsuario} group by categoria;`;
+
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
     playlistFav,
     buscarDados,
     buscarPontuacao,
     buscarMediaGeral,
-    buscarMedia
+    buscarMedia,
+    scoreQuiz
 }

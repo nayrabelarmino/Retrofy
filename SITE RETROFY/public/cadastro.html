@@ -98,7 +98,7 @@
 
             if (resposta.ok) {
                 //cardErro.style.display = "block";
-                swal("Parábens", "Cadastro realizado com sucesso redirecionando a tela de login 😄...!", "success");
+                swal("Parábens", "Cadastro realizado com sucesso redirecionando a tela de login 😄!", "success");
 
 
                 setTimeout(() => {
@@ -108,7 +108,7 @@
                 limparFormulario();
                 finalizarAguardar();
             } else {
-                swal("Ops", "Confira se os dados foram inseridos de maneira correta😭!")
+                swal("Ops", "O email já foi cadastrado anteriormente! Tente fazer login ou insira outro email.")
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
