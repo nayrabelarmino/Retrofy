@@ -6,7 +6,7 @@ USE retrofy;
 CREATE TABLE usuario (
 idUsuario INT PRIMARY KEY auto_increment,
 nome varchar(50),
-email varchar(100),
+email varchar(100) unique,
 senha varchar(100),
 fkPlaylist int,
 constraint fkPlaylist_votacao foreign key (fkPlaylist) references playlist (idPlaylist)
