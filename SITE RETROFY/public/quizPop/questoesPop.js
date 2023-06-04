@@ -2,7 +2,7 @@ let questions = [
     {
     numb: 1,
     question: "Qual é o nome do cantor pop conhecido como o 'Rei do Pop' nos anos 80?",
-    answer: "Michael Jackson",
+    resposta: "Michael Jackson",
     options: [
       "Prince",
       "Michael Jackson",
@@ -13,7 +13,7 @@ let questions = [
     {
     numb: 2,
     question: "Qual é o nome do grupo pop formado pelos irmãos Gibb, famoso nos anos 60 e 70?",
-    answer: "Bee Gees",
+    resposta: "Bee Gees",
     options: [
       "The Beatles",
       "The Jackson 5",
@@ -24,7 +24,7 @@ let questions = [
     {
     numb: 3,
     question: "Qual é o nome da cantora pop que ficou conhecida como a 'Rainha da Discoteca' nos anos 70?",
-    answer: "Donna Summer",
+    resposta: "Donna Summer",
     options: [
       "Donna Summer",
       "Diana Ross",
@@ -35,7 +35,7 @@ let questions = [
     {
     numb: 4,
     question: "Qual é o nome da banda de rock formada pelos músicos Robert Plant, Jimmy Page, John Paul Jones e John Bonham nos anos 70?",
-    answer: "Led Zeppelin",
+    resposta: "Led Zeppelin",
     options: [
       "Pink Floyd",
       "The Who",
@@ -46,7 +46,7 @@ let questions = [
     {
     numb: 5,
     question: "Qual é o nome da banda de rock que ficou famosa pela música 'Stairway to Heaven'?",
-    answer: "Led Zeppelin",
+    resposta: "Led Zeppelin",
     options: [
       "Led Zeppelin",
       "The Doors",
@@ -57,7 +57,7 @@ let questions = [
   {
     numb: 6,
     question: "Qual é o nome da cantora pop americana que ficou famosa pela música 'Like a Virgin' nos anos 80?",
-    answer: "Madonna",
+    resposta: "Madonna",
     options: [
       "Janet Jackson",
       "Whitney Houston",
@@ -68,7 +68,7 @@ let questions = [
   {
     numb: 7,
     question: "Qual é o nome do grupo musical americano que ficou famoso pelas músicas 'Stayin' Alive' e 'Night Fever' nos anos 70?",
-    answer: "Bee Gees",
+    resposta: "Bee Gees",
     options: [
       "Bee Gees",
       "ABBA",
@@ -78,7 +78,7 @@ let questions = [
   },  {
     numb: 8,
     question: "De quem é a música 'Dream a little dream of me'?",
-    answer: "Doris Day",
+    resposta: "Doris Day",
     options: [
       "Betty Hutton",
       "Celly Campelo",
@@ -89,7 +89,7 @@ let questions = [
   {
     numb: 9,
     question: "Qual é o nome da cantora pop que ficou famosa pela música 'Roar'?",
-    answer: "Katy Perry",
+    resposta: "Katy Perry",
     options: [
       "Billie Eilish",
       "Katy Perry",
@@ -100,7 +100,7 @@ let questions = [
   {
     numb: 10,
     question: "Qual música pertence a cantora Celly Campelo?",
-    answer: "Estúpido cupido",
+    resposta: "Estúpido cupido",
     options: [
       "Sozinho",
       "Algum ritmo",
