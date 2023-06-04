@@ -72,7 +72,7 @@ WHERE idUsuario = 1 ORDER BY idPontuacao DESC;
 -- Select para a média de acertos de cada Quiz
 SELECT categoria as Quiz, round(avg(pontuacao),1) as Média FROM pontuacao JOIN usuario ON fkUsuario = idUsuario group by categoria;
 
-SELECT categoria as Quiz, round(avg(pontuacao),1) as Média FROM pontuacao JOIN usuario ON fkUsuario = idUsuario  where idUsuario = 6 group by categoria;
+SELECT categoria as Quiz, round(avg(pontuacao),1) as Media FROM pontuacao JOIN usuario ON fkUsuario = idUsuario  where idUsuario = 14 and categoria = 'Post Punk';
 
 -- SELECTS PONTUACAO RECORD USUARIO
-SELECT categoria as Quiz, MAX(pontuacao) as 'Pontuação Record' FROM pontuacao JOIN usuario ON fkUsuario = idUsuario  where idUsuario = 1 group by categoria;
+SELECT categoria as Quiz, MAX(pontuacao) as 'Pontuação Record' FROM pontuacao JOIN usuario ON fkUsuario = idUsuario  where idUsuario = 13 group by categoria;
